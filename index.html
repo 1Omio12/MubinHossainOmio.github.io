@@ -1,1893 +1,1578 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mubin Hossain Omio — Nuclear Engineer & AI Researcher</title>
-    <meta name="description" content="Portfolio of Mubin Hossain Omio - Nuclear Engineering Innovator and AI Researcher">
-
+    <title>Mubin Hossain Omio | Nuclear Engineering & AI</title>
+    <meta name="description" content="Portfolio of Mubin Hossain Omio - Nuclear Engineering Innovator and AI Enthusiast">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#38bdf8',
+                        accent: '#a78bfa',
+                        nuclear: '#fbbf24',
+                        emerald: '#34d399',
+                        dark: '#050a12',
+                        surface: '#0a1220',
+                        card: '#0d1a2d',
+                    },
+                    fontFamily: {
+                        display: ['Syne', 'sans-serif'],
+                        sans: ['DM Sans', 'sans-serif'],
+                        mono: ['DM Mono', 'monospace'],
+                    },
+                    animation: {
+                        'blob': "blob 14s infinite",
+                        'spin-slow': 'spin 16s linear infinite',
+                        'float': 'float 7s ease-in-out infinite',
+                        'shimmer': 'shimmer 2.5s infinite',
+                        'slide-up': 'slide-up 0.7s cubic-bezier(0.16,1,0.3,1) forwards',
+                        'fade-in': 'fade-in 0.6s ease forwards',
+                        'glow-pulse': 'glow-pulse 3s ease-in-out infinite',
+                        'scan': 'scan 3s linear infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            "0%": { transform: "translate(0,0) scale(1)" },
+                            "33%": { transform: "translate(40px,-60px) scale(1.12)" },
+                            "66%": { transform: "translate(-25px,25px) scale(0.88)" },
+                            "100%": { transform: "translate(0,0) scale(1)" }
+                        },
+                        float: {
+                            "0%,100%": { transform: "translateY(0)" },
+                            "50%": { transform: "translateY(-14px)" }
+                        },
+                        shimmer: {
+                            "0%": { backgroundPosition: "-200% center" },
+                            "100%": { backgroundPosition: "200% center" }
+                        },
+                        'slide-up': {
+                            "0%": { opacity: 0, transform: "translateY(30px)" },
+                            "100%": { opacity: 1, transform: "translateY(0)" }
+                        },
+                        'fade-in': {
+                            "0%": { opacity: 0 },
+                            "100%": { opacity: 1 }
+                        },
+                        'glow-pulse': {
+                            "0%,100%": { boxShadow: "0 0 20px rgba(56,189,248,0.3), 0 0 60px rgba(56,189,248,0.1)" },
+                            "50%": { boxShadow: "0 0 40px rgba(56,189,248,0.6), 0 0 80px rgba(56,189,248,0.2)" }
+                        },
+                        scan: {
+                            "0%": { transform: "translateY(-100%)" },
+                            "100%": { transform: "translateY(100vh)" }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
     <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
         :root {
-            --gold: #c9a84c;
-            --gold-light: #e8c97a;
-            --gold-dim: rgba(201,168,76,0.15);
-            --gold-border: rgba(201,168,76,0.25);
-            --bg: #07080d;
-            --bg2: #0d0f18;
-            --bg3: #111420;
-            --surface: rgba(255,255,255,0.03);
-            --surface2: rgba(255,255,255,0.06);
-            --text: #e8e6df;
-            --text-dim: #8a8680;
-            --text-faint: #3a3830;
-            --accent: #4a9eff;
-            --accent-dim: rgba(74,158,255,0.12);
-            --green: #4ecb8d;
-            --red: #ff6b6b;
+            --primary: #38bdf8;
+            --accent: #a78bfa;
+            --nuclear: #fbbf24;
+            --bg: #050a12;
+            --surface: #0a1220;
+            --card: #0d1a2d;
+            --border: rgba(56,189,248,0.12);
+            --text: #e2e8f0;
+            --text-muted: #64748b;
+            --grid-color: rgba(56,189,248,0.04);
+            --canvas-particle: rgba(56,189,248,0.5);
+            --canvas-line: rgba(56,189,248,0.15);
         }
+        html.light {
+            --bg: #f0f6ff;
+            --surface: #ffffff;
+            --card: #f8fafc;
+            --border: rgba(14,165,233,0.18);
+            --text: #0f172a;
+            --text-muted: #475569;
+            --grid-color: rgba(14,165,233,0.06);
+            --canvas-particle: rgba(14,165,233,0.6);
+            --canvas-line: rgba(14,165,233,0.12);
+        }
+
+        * { box-sizing: border-box; }
 
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Outfit', sans-serif;
-            background: var(--bg);
+            background-color: var(--bg);
             color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            transition: background-color 0.4s, color 0.4s;
             overflow-x: hidden;
-            cursor: none;
         }
 
-        /* Custom cursor */
-        .cursor {
-            position: fixed;
-            width: 8px; height: 8px;
-            background: var(--gold);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 99999;
-            transform: translate(-50%, -50%);
-            transition: transform 0.1s;
-        }
-        .cursor-ring {
-            position: fixed;
-            width: 32px; height: 32px;
-            border: 1px solid rgba(201,168,76,0.4);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 99998;
-            transform: translate(-50%, -50%);
-            transition: all 0.15s ease;
-        }
-
-        /* Noise overlay */
+        /* NOISE TEXTURE OVERLAY */
         body::before {
             content: '';
             position: fixed;
             inset: 0;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
             pointer-events: none;
-            z-index: 9999;
-            opacity: 0.4;
-        }
-
-        /* Scrollbar */
-        ::-webkit-scrollbar { width: 3px; }
-        ::-webkit-scrollbar-track { background: var(--bg); }
-        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
-
-        /* ===================== INTRO ===================== */
-        #intro {
-            position: fixed;
-            inset: 0;
-            z-index: 9000;
-            background: #000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-        }
-        #intro .i-line {
-            width: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            transition: width 0.8s cubic-bezier(0.4,0,0.2,1);
-        }
-        #intro h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.5rem, 8vw, 6rem);
-            font-weight: 300;
-            color: #fff;
-            opacity: 0;
-            letter-spacing: 0.05em;
-            text-align: center;
-        }
-        #intro h1 span { color: var(--gold); }
-        #intro p {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.75rem;
-            letter-spacing: 0.3em;
-            color: var(--text-dim);
-            opacity: 0;
-            text-transform: uppercase;
-        }
-
-        /* ===================== NAV ===================== */
-        nav {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 100;
-            padding: 1.5rem 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid transparent;
-            transition: all 0.4s;
-        }
-        nav.scrolled {
-            background: rgba(7,8,13,0.92);
-            backdrop-filter: blur(20px);
-            border-bottom-color: var(--gold-border);
-        }
-        .nav-logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--text);
-            text-decoration: none;
-            letter-spacing: 0.05em;
-        }
-        .nav-logo span { color: var(--gold); }
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-        .nav-links a {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--text-dim);
-            text-decoration: none;
-            transition: color 0.3s;
-            position: relative;
-        }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px; left: 0;
-            width: 0; height: 1px;
-            background: var(--gold);
-            transition: width 0.3s;
-        }
-        .nav-links a:hover { color: var(--gold); }
-        .nav-links a:hover::after { width: 100%; }
-        .nav-cta {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.7rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--gold);
-            border: 1px solid var(--gold-border);
-            padding: 0.6rem 1.5rem;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        .nav-cta:hover {
-            background: var(--gold-dim);
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 4px;
-        }
-        .hamburger span {
-            display: block;
-            width: 24px;
-            height: 1px;
-            background: var(--text-dim);
-            transition: all 0.3s;
-        }
-
-        /* ===================== HERO ===================== */
-        #hero {
-            min-height: 100vh;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            padding: 6rem 6rem 4rem;
-            position: relative;
-            overflow: hidden;
-            gap: 4rem;
-        }
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 60% 50% at 75% 50%, rgba(201,168,76,0.06) 0%, transparent 60%),
-                radial-gradient(ellipse 40% 60% at 20% 80%, rgba(74,158,255,0.04) 0%, transparent 60%);
-        }
-        .hero-grid {
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
-            background-size: 60px 60px;
-            mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
-        }
-        .hero-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-family: 'DM Mono', monospace;
-            font-size: 0.65rem;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 1.5rem;
-        }
-        .hero-label::before {
-            content: '';
-            display: block;
-            width: 32px;
-            height: 1px;
-            background: var(--gold);
-        }
-        .hero-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(3rem, 5vw, 5.5rem);
-            font-weight: 300;
-            line-height: 1.05;
-            color: var(--text);
-            margin-bottom: 0.5rem;
-        }
-        .hero-name em {
-            font-style: italic;
-            color: var(--gold);
-        }
-        .hero-typewriter {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.85rem;
-            color: var(--accent);
-            letter-spacing: 0.05em;
-            margin-bottom: 2rem;
-            min-height: 1.4em;
-        }
-        .hero-typewriter::before { content: '> '; color: var(--gold); }
-        .hero-typewriter::after { content: '_'; animation: blink 1s step-end infinite; }
-        @keyframes blink { 50% { opacity: 0; } }
-        .hero-desc {
-            font-size: 1rem;
-            font-weight: 300;
-            line-height: 1.8;
-            color: var(--text-dim);
-            max-width: 480px;
-            margin-bottom: 2.5rem;
-        }
-        .hero-desc strong { color: var(--text); font-weight: 500; }
-        .hero-actions {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .btn-primary {
-            display: inline-block;
-            font-family: 'DM Mono', monospace;
-            font-size: 0.72rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--bg);
-            background: var(--gold);
-            padding: 0.85rem 2rem;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-weight: 500;
-        }
-        .btn-primary:hover {
-            background: var(--gold-light);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(201,168,76,0.3);
-        }
-        .btn-outline {
-            display: inline-block;
-            font-family: 'DM Mono', monospace;
-            font-size: 0.72rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--text-dim);
-            border: 1px solid var(--text-faint);
-            padding: 0.85rem 2rem;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        .btn-outline:hover {
-            border-color: var(--gold-border);
-            color: var(--gold);
-        }
-        .hero-socials {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--text-faint);
-        }
-        .hero-socials a {
-            width: 40px; height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--text-faint);
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: all 0.3s;
-        }
-        .hero-socials a:hover {
-            border-color: var(--gold-border);
-            color: var(--gold);
-            background: var(--gold-dim);
-        }
-
-        /* Hero photo side */
-        .hero-photo-side {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .photo-frame {
-            position: relative;
-            width: min(380px, 100%);
-        }
-        .photo-frame::before {
-            content: '';
-            position: absolute;
-            inset: -1px;
-            background: linear-gradient(135deg, var(--gold), transparent 50%, var(--accent) 100%);
-            z-index: 0;
-        }
-        .photo-frame img {
-            position: relative;
             z-index: 1;
-            width: 100%;
-            aspect-ratio: 3/4;
-            object-fit: cover;
-            display: block;
-            filter: grayscale(20%);
-            transition: filter 0.4s;
-        }
-        .photo-frame:hover img { filter: grayscale(0%); }
-        .photo-badge {
-            position: absolute;
-            font-family: 'DM Mono', monospace;
-            font-size: 0.65rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            background: var(--bg2);
-            border: 1px solid var(--gold-border);
-            padding: 0.6rem 1rem;
-            color: var(--gold);
-            z-index: 2;
-        }
-        .photo-badge.tl { top: -1rem; left: -2rem; }
-        .photo-badge.br { bottom: 2rem; right: -2rem; }
-        .photo-stats {
-            position: absolute;
-            right: -3rem;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        .stat-pill {
-            background: var(--bg2);
-            border: 1px solid var(--gold-border);
-            padding: 0.8rem 1rem;
-            text-align: center;
-            min-width: 80px;
-        }
-        .stat-pill .num {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--gold);
-            line-height: 1;
-        }
-        .stat-pill .label {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.55rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--text-dim);
-            margin-top: 4px;
+            opacity: 0.5;
         }
 
-        /* ===================== SECTIONS ===================== */
-        section {
-            padding: 7rem 6rem;
-            position: relative;
-        }
-        @media (max-width: 900px) {
-            section { padding: 5rem 2rem; }
-            nav { padding: 1.2rem 1.5rem; }
-            #hero { grid-template-columns: 1fr; padding: 5rem 2rem 3rem; gap: 3rem; }
-            .hero-photo-side { order: -1; }
-            .photo-stats { right: -1rem; }
-            .nav-links, .nav-cta { display: none; }
-            .hamburger { display: flex; }
-            .photo-badge.br { right: -0.5rem; }
+        /* GRID BACKGROUND */
+        .grid-bg {
+            background-image: 
+                linear-gradient(rgba(56,189,248,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56,189,248,0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
         }
 
-        .section-label {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.65rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: var(--gold);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
+        /* GLASSMORPHISM */
+        .glass {
+            background: rgba(13,26,45,0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
         }
-        .section-label::after {
-            content: '';
-            flex: 1;
-            max-width: 60px;
+        html.light .glass {
+            background: rgba(255,255,255,0.82);
+            border: 1px solid rgba(14,165,233,0.14);
+            box-shadow: 0 2px 20px rgba(14,165,233,0.06);
+        }
+
+        .glass-nav {
+            background: rgba(5,10,18,0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(56,189,248,0.08);
+        }
+        html.light .glass-nav {
+            background: rgba(240,246,255,0.92);
+            border-bottom: 1px solid rgba(14,165,233,0.12);
+            box-shadow: 0 1px 20px rgba(14,165,233,0.08);
+        }
+
+        /* SHIMMER TEXT */
+        .shimmer-text {
+            background: linear-gradient(120deg, #38bdf8 0%, #a78bfa 30%, #38bdf8 60%, #fbbf24 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 4s linear infinite;
+        }
+
+        /* GLOW LINE */
+        .glow-line {
+            background: linear-gradient(90deg, transparent, #38bdf8, #a78bfa, transparent);
             height: 1px;
-            background: var(--gold);
         }
-        .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            font-weight: 300;
-            color: var(--text);
-            margin-bottom: 3rem;
-            line-height: 1.1;
-        }
-        .section-title em { color: var(--gold); font-style: italic; }
 
-        /* ===================== PUBLICATIONS ===================== */
-        #publications { background: var(--bg2); }
-        .pub-card {
-            border: 1px solid var(--text-faint);
-            padding: 2rem 2.5rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            transition: border-color 0.3s;
-            background: var(--surface);
-        }
-        .pub-card::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 0; bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, var(--gold), transparent);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .pub-card:hover { border-color: var(--gold-border); }
-        .pub-card:hover::before { opacity: 1; }
-        .pub-badge {
-            display: inline-block;
-            font-family: 'DM Mono', monospace;
-            font-size: 0.6rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            padding: 0.3rem 0.7rem;
-            margin-bottom: 1rem;
-            border: 1px solid;
-        }
-        .pub-badge.published { color: var(--green); border-color: rgba(78,203,141,0.3); background: rgba(78,203,141,0.06); }
-        .pub-badge.accepted { color: var(--gold); border-color: var(--gold-border); background: var(--gold-dim); }
-        .pub-badge.ongoing { color: var(--accent); border-color: rgba(74,158,255,0.3); background: rgba(74,158,255,0.06); }
-        .pub-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: var(--text);
-            margin-bottom: 0.6rem;
-            line-height: 1.5;
-        }
-        .pub-journal {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--text-dim);
-            letter-spacing: 0.05em;
-        }
-        .pub-doi {
+        /* SECTION TAG */
+        .section-tag {
             font-family: 'DM Mono', monospace;
             font-size: 0.65rem;
-            color: var(--accent);
-            margin-top: 0.4rem;
-            display: block;
-            text-decoration: none;
-        }
-        .pub-doi:hover { text-decoration: underline; }
-
-        /* ===================== RESEARCH / TIMELINE ===================== */
-        #research { background: var(--bg); }
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 0; bottom: 0;
-            width: 1px;
-            background: linear-gradient(180deg, var(--gold) 0%, var(--text-faint) 60%, transparent 100%);
-        }
-        .timeline-item {
-            position: relative;
-            padding-left: 2.5rem;
-            padding-bottom: 3.5rem;
-            opacity: 0;
-            transform: translateX(-20px);
-            transition: all 0.6s ease;
-        }
-        .timeline-item.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -6px; top: 6px;
-            width: 12px; height: 12px;
-            border-radius: 50%;
-            background: var(--bg);
-            border: 2px solid var(--gold);
-            box-shadow: 0 0 12px rgba(201,168,76,0.5);
-        }
-        .timeline-date {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.65rem;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 0.75rem;
+            color: var(--primary);
+            opacity: 0.8;
         }
-        .timeline-role {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            font-weight: 400;
-            color: var(--text);
-            margin-bottom: 0.25rem;
-        }
-        .timeline-org {
-            font-size: 0.85rem;
-            color: var(--text-dim);
-            margin-bottom: 1rem;
-        }
-        .timeline-body {
-            font-size: 0.9rem;
-            color: var(--text-dim);
-            line-height: 1.8;
-            border-left: 1px solid var(--text-faint);
-            padding-left: 1.25rem;
-        }
-        .timeline-body li { margin-bottom: 0.4rem; list-style: none; position: relative; padding-left: 1rem; }
-        .timeline-body li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 0.7rem; }
 
-        /* ===================== PROJECTS ===================== */
-        #projects { background: var(--bg2); }
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 1.5px;
+        /* CARD HOVER */
+        .card-hover {
+            transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease, border-color 0.3s;
         }
-        .project-card {
-            background: var(--surface);
-            border: 1px solid var(--text-faint);
-            padding: 2.5rem;
+        .card-hover:hover {
+            transform: translateY(-6px);
+        }
+
+        /* SKILL BAR */
+        .skill-fill {
             position: relative;
             overflow: hidden;
-            transition: all 0.4s;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        .project-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .project-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, var(--gold-dim) 0%, transparent 60%);
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-        .project-card:hover {
-            border-color: var(--gold-border);
-            transform: translateY(-4px);
-        }
-        .project-card:hover::after { opacity: 1; }
-        .project-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3.5rem;
-            font-weight: 300;
-            color: var(--text-faint);
-            line-height: 1;
-            margin-bottom: 1rem;
-            transition: color 0.3s;
-        }
-        .project-card:hover .project-number { color: var(--gold-border); }
-        .project-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 0.75rem;
-            line-height: 1.3;
-        }
-        .project-desc {
-            font-size: 0.85rem;
-            color: var(--text-dim);
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        .tag {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.6rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 0.3rem 0.7rem;
-            border: 1px solid var(--text-faint);
-            color: var(--text-dim);
-        }
-        .tag.gold { border-color: var(--gold-border); color: var(--gold); }
-        .tag.blue { border-color: rgba(74,158,255,0.3); color: var(--accent); }
-        .tag.green { border-color: rgba(78,203,141,0.3); color: var(--green); }
-        .project-award {
-            margin-top: 1rem;
-            font-family: 'DM Mono', monospace;
-            font-size: 0.65rem;
-            letter-spacing: 0.1em;
-            color: var(--gold);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        /* ===================== ACHIEVEMENTS ===================== */
-        #achievements { background: var(--bg); }
-        .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1px;
-        }
-        .achievement-card {
-            border: 1px solid var(--text-faint);
-            padding: 2rem;
-            background: var(--surface);
-            position: relative;
-            transition: all 0.3s;
-            opacity: 0;
-            transform: scale(0.97);
-        }
-        .achievement-card.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-        .achievement-card:hover {
-            border-color: var(--gold-border);
-            background: var(--surface2);
-        }
-        .achievement-icon {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            font-weight: 300;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-        .achievement-scope {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.6rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--text-dim);
-            margin-bottom: 0.75rem;
-        }
-        .achievement-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 0.5rem;
-            line-height: 1.4;
-        }
-        .achievement-detail {
-            font-size: 0.82rem;
-            color: var(--text-dim);
-            line-height: 1.6;
-        }
-        .achievement-rank {
-            position: absolute;
-            top: 1.5rem; right: 1.5rem;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: var(--text-faint);
-        }
-
-        /* ===================== SKILLS ===================== */
-        #skills { background: var(--bg2); }
-        .skills-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: start;
-        }
-        @media (max-width: 900px) { .skills-layout { grid-template-columns: 1fr; gap: 3rem; } }
-        .skill-bar-item { margin-bottom: 2rem; }
-        .skill-bar-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.6rem;
-        }
-        .skill-name {
-            font-size: 0.9rem;
-            color: var(--text);
-            font-weight: 400;
-        }
-        .skill-pct {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--gold);
-        }
-        .skill-track {
-            height: 2px;
-            background: var(--text-faint);
-            position: relative;
-            overflow: visible;
-        }
-        .skill-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--gold), var(--gold-light));
-            width: 0;
-            transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
+            border-radius: 999px;
         }
         .skill-fill::after {
             content: '';
             position: absolute;
-            right: 0; top: 50%;
-            transform: translateY(-50%);
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: var(--gold-light);
-            box-shadow: 0 0 8px var(--gold);
-        }
-        .toolkit-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-        }
-        .toolkit-item {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.65rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            border: 1px solid var(--text-faint);
-            padding: 0.5rem 0.9rem;
-            color: var(--text-dim);
-            transition: all 0.3s;
-        }
-        .toolkit-item:hover {
-            border-color: var(--gold-border);
-            color: var(--gold);
-            background: var(--gold-dim);
-        }
-        .edu-block {
-            margin-top: 2.5rem;
-            border: 1px solid var(--gold-border);
-            padding: 1.5rem 2rem;
-            background: var(--gold-dim);
-            position: relative;
-        }
-        .edu-block::before {
-            content: 'EDUCATION';
-            position: absolute;
-            top: -0.6rem; left: 1.5rem;
-            font-family: 'DM Mono', monospace;
-            font-size: 0.55rem;
-            letter-spacing: 0.2em;
-            background: var(--bg2);
-            padding: 0 0.5rem;
-            color: var(--gold);
-        }
-        .edu-degree {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 0.25rem;
-        }
-        .edu-inst {
-            font-size: 0.82rem;
-            color: var(--text-dim);
-        }
-        .edu-cgpa {
-            margin-top: 0.5rem;
-            font-family: 'DM Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--gold);
-        }
-
-        /* ===================== MEDIA ===================== */
-        #media { background: var(--bg); }
-        .media-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5px;
-        }
-        .media-card {
-            border: 1px solid var(--text-faint);
-            padding: 1.75rem 2rem;
-            background: var(--surface);
-            display: block;
-            text-decoration: none;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        .media-card::before {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0;
-            width: 0; height: 1px;
-            background: var(--gold);
-            transition: width 0.4s;
-        }
-        .media-card:hover { border-color: var(--gold-border); background: var(--surface2); }
-        .media-card:hover::before { width: 100%; }
-        .media-outlet {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.6rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 0.75rem;
-        }
-        .media-headline {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1rem;
-            font-weight: 400;
-            color: var(--text);
-            line-height: 1.5;
-            margin-bottom: 0.75rem;
-        }
-        .media-date {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.6rem;
-            color: var(--text-dim);
-        }
-        .media-arrow {
-            position: absolute;
-            top: 1.5rem; right: 1.5rem;
-            color: var(--text-faint);
-            font-size: 0.75rem;
-            transition: all 0.3s;
-        }
-        .media-card:hover .media-arrow { color: var(--gold); transform: translate(3px, -3px); }
-
-        /* ===================== DEPLOYMENTS ===================== */
-        #deployments { background: var(--bg2); }
-        .deploy-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-        }
-        @media (max-width: 700px) { .deploy-grid { grid-template-columns: 1fr; } }
-        .deploy-card {
-            position: relative;
-            aspect-ratio: 4/3;
-            overflow: hidden;
-            display: block;
-            text-decoration: none;
-        }
-        .deploy-card img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-            filter: brightness(0.5) grayscale(30%);
-        }
-        .deploy-card:hover img { transform: scale(1.05); filter: brightness(0.4) grayscale(0%); }
-        .deploy-overlay {
-            position: absolute;
             inset: 0;
-            background: linear-gradient(0deg, rgba(7,8,13,0.9) 0%, transparent 60%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 2rem;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%);
+            transform: translateX(-100%);
+            animation: shimmer-bar 2.5s ease infinite;
         }
-        .deploy-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            font-weight: 300;
-            color: #fff;
-            margin-bottom: 0.25rem;
+        @keyframes shimmer-bar {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
-        .deploy-desc {
+
+        /* TYPEWRITER */
+        .cursor-blink { animation: blink 1s step-end infinite; }
+        @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+        /* SCROLLBAR */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: rgba(56,189,248,0.3); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(56,189,248,0.6); }
+
+        /* NO SCROLLBAR */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* ZOOMABLE */
+        .zoomable { cursor: zoom-in; }
+
+        /* INTRO OVERLAY */
+        @keyframes name-enter {
+            0% { opacity: 0; transform: scale(2.5) translateY(60px); filter: blur(20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+        }
+        @keyframes title-slide {
+            0% { opacity: 0; transform: translateY(30px); letter-spacing: 0.1em; }
+            100% { opacity: 1; transform: translateY(0); letter-spacing: 0.4em; }
+        }
+        @keyframes line-expand {
+            0% { width: 0; opacity: 0; }
+            100% { width: 180px; opacity: 1; }
+        }
+        .intro-name { animation: name-enter 0.9s cubic-bezier(0.16,1,0.3,1) forwards; }
+        .intro-line { animation: line-expand 0.7s cubic-bezier(0.16,1,0.3,1) 0.7s forwards; }
+        .intro-title { animation: title-slide 0.8s cubic-bezier(0.16,1,0.3,1) 0.9s forwards; }
+
+        /* SCAN LINE */
+        .scan-line {
+            position: absolute;
+            left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(56,189,248,0.6), transparent);
+            animation: scan 3s linear infinite;
+            pointer-events: none;
+        }
+
+        /* BADGE PILL */
+        .badge {
             font-family: 'DM Mono', monospace;
             font-size: 0.65rem;
-            letter-spacing: 0.1em;
-            color: rgba(255,255,255,0.5);
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-        .deploy-link {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.65rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--gold);
+            letter-spacing: 0.06em;
+            padding: 3px 10px;
+            border-radius: 999px;
+            border: 1px solid;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            opacity: 0;
-            transform: translateY(8px);
-            transition: all 0.3s;
-        }
-        .deploy-card:hover .deploy-link { opacity: 1; transform: translateY(0); }
-        .deploy-link i { font-size: 0.6rem; }
-
-        /* ===================== CONTACT ===================== */
-        #contact { background: var(--bg); }
-        .contact-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: start;
-        }
-        @media (max-width: 900px) { .contact-layout { grid-template-columns: 1fr; gap: 3rem; } }
-        .contact-info-item {
-            display: flex;
-            gap: 1.5rem;
-            align-items: flex-start;
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--text-faint);
-        }
-        .contact-info-item:last-child { border-bottom: none; }
-        .contact-icon {
-            width: 40px; height: 40px;
-            border: 1px solid var(--gold-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 0.9rem;
-            flex-shrink: 0;
-        }
-        .contact-info-label {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.6rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--text-dim);
-            margin-bottom: 0.4rem;
-        }
-        .contact-info-val {
-            font-size: 0.95rem;
-            color: var(--text);
-        }
-        .contact-info-val a {
-            color: var(--text);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .contact-info-val a:hover { color: var(--gold); }
-        .form-group { margin-bottom: 1.25rem; }
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            background: var(--surface);
-            border: 1px solid var(--text-faint);
-            color: var(--text);
-            padding: 1rem 1.25rem;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.9rem;
-            outline: none;
-            transition: border-color 0.3s;
-            resize: none;
-        }
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: var(--gold-border);
-        }
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: var(--text-faint);
-        }
-        .form-label {
-            display: block;
-            font-family: 'DM Mono', monospace;
-            font-size: 0.6rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--text-dim);
-            margin-bottom: 0.5rem;
-        }
-        .form-submit {
-            width: 100%;
-            padding: 1rem;
-            background: var(--gold);
-            color: var(--bg);
-            font-family: 'DM Mono', monospace;
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 500;
-        }
-        .form-submit:hover {
-            background: var(--gold-light);
-            box-shadow: 0 4px 20px rgba(201,168,76,0.3);
-        }
-        #success-msg {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--green);
-            text-align: center;
-            margin-top: 1rem;
-            letter-spacing: 0.1em;
+            gap: 5px;
         }
 
-        /* ===================== FOOTER ===================== */
-        footer {
-            background: var(--bg2);
-            border-top: 1px solid var(--text-faint);
-            padding: 3rem 6rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-        @media (max-width: 700px) { footer { padding: 3rem 2rem; flex-direction: column; text-align: center; } }
-        .footer-copy {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.65rem;
-            letter-spacing: 0.1em;
-            color: var(--text-faint);
-        }
-        .footer-socials { display: flex; gap: 1.5rem; }
-        .footer-socials a {
-            font-size: 0.85rem;
-            color: var(--text-faint);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .footer-socials a:hover { color: var(--gold); }
-
-        /* ===================== MOBILE MENU ===================== */
-        #mobile-drawer {
-            position: fixed;
-            top: 0; right: -100%;
-            width: 280px; height: 100vh;
-            background: var(--bg2);
-            border-left: 1px solid var(--gold-border);
-            z-index: 200;
-            transition: right 0.4s cubic-bezier(0.4,0,0.2,1);
-            padding: 5rem 2.5rem 2.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        #mobile-drawer.open { right: 0; }
-        #mobile-drawer a {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--text-dim);
-            text-decoration: none;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--text-faint);
-            transition: color 0.3s;
-        }
-        #mobile-drawer a:hover { color: var(--gold); }
-        .drawer-close {
-            position: absolute;
-            top: 1.5rem; right: 1.5rem;
-            background: none;
-            border: none;
-            color: var(--text-dim);
-            font-size: 1.25rem;
-            cursor: pointer;
-        }
-        .overlay-backdrop {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.5);
-            z-index: 199;
-        }
-        .overlay-backdrop.open { display: block; }
-
-        /* ===================== MODAL ===================== */
-        #modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 5000;
-            background: rgba(0,0,0,0.95);
-            backdrop-filter: blur(10px);
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-        #modal.open { display: flex; }
-        #modal img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
-        #modal-close {
-            position: absolute;
-            top: 1.5rem; right: 2rem;
-            background: none;
-            border: none;
-            color: var(--text-dim);
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
-        /* scroll reveal */
+        /* REVEAL ON SCROLL */
         .reveal {
             opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
+            transform: translateY(28px);
+            transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
         }
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* TIMELINE DOT */
+        .timeline-dot {
+            width: 14px; height: 14px;
+            border-radius: 50%;
+            border: 3px solid var(--bg);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        /* GLOW BUTTON */
+        .btn-primary {
+            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+            color: #fff;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(56,189,248,0.25);
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 40px rgba(56,189,248,0.5), 0 0 80px rgba(56,189,248,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* STAT CARD */
+        .stat-card {
+            background: linear-gradient(135deg, rgba(56,189,248,0.06), rgba(167,139,250,0.06));
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* PUBLICATION CARD */
+        .pub-card {
+            border-left: 3px solid var(--primary);
+            padding-left: 16px;
+            position: relative;
+        }
+        .pub-card::before {
+            content: '';
+            position: absolute;
+            left: -5px; top: 0; bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, var(--primary), transparent);
+        }
+
+        /* PROFILE IMAGE RING */
+        .profile-ring {
+            background: conic-gradient(from 0deg, #38bdf8, #a78bfa, #fbbf24, #38bdf8);
+            animation: spin 6s linear infinite;
+        }
+
+        /* DECORATIVE CORNER */
+        .corner-tl::before, .corner-br::after {
+            content: '';
+            position: absolute;
+            width: 20px; height: 20px;
+            border-color: rgba(56,189,248,0.5);
+            border-style: solid;
+        }
+        .corner-tl::before {
+            top: 8px; left: 8px;
+            border-width: 2px 0 0 2px;
+        }
+        .corner-br::after {
+            bottom: 8px; right: 8px;
+            border-width: 0 2px 2px 0;
+        }
+
+        /* MOBILE MENU */
+        #mobile-menu {
+            background: rgba(5,10,18,0.97);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(56,189,248,0.1);
+        }
+        html.light #mobile-menu {
+            background: rgba(248,250,252,0.98);
+        }
     </style>
 </head>
-<body>
 
-<!-- Custom Cursor -->
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursor-ring"></div>
+<body class="antialiased selection:bg-primary/30 selection:text-white">
 
-<!-- INTRO -->
-<div id="intro">
-    <div class="i-line" id="iline"></div>
-    <h1 id="intro-name">Mubin Hossain <em>Omio</em></h1>
-    <div class="i-line" id="iline2"></div>
-    <p id="intro-sub">Nuclear Engineer · AI Researcher</p>
-</div>
-
-<!-- NAV -->
-<nav id="navbar">
-    <a href="#hero" class="nav-logo">MH<span>O</span></a>
-    <ul class="nav-links">
-        <li><a href="#research">Research</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#achievements">Awards</a></li>
-        <li><a href="#media">Media</a></li>
-        <li><a href="#skills">Skills</a></li>
-    </ul>
-    <a href="#contact" class="nav-cta">Get in Touch</a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-    </button>
-</nav>
-
-<!-- Mobile Drawer -->
-<div class="overlay-backdrop" id="backdrop"></div>
-<div id="mobile-drawer">
-    <button class="drawer-close" id="drawer-close"><i class="fas fa-times"></i></button>
-    <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
-    <a href="#projects">Projects</a>
-    <a href="#achievements">Awards</a>
-    <a href="#media">Media</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-</div>
-
-<!-- ===================== HERO ===================== -->
-<section id="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
-    <div style="position:relative; z-index:1;">
-        <div class="hero-label">Open to Collaboration</div>
-        <h1 class="hero-name">Mubin Hossain<br><em>Omio</em></h1>
-        <div class="hero-typewriter" id="tw"></div>
-        <p class="hero-desc">
-            I bridge the gap between <strong>Nuclear Physics</strong> and <strong>AI Engineering</strong> — publishing in Q2 journals, building IoT radiation safety systems, and competing on international stages.
-            <br><br>
-            Final-Year BSc · Research Assistant · <strong>CGPA 3.90</strong> · MIST, Dhaka
-        </p>
-        <div class="hero-actions">
-            <a href="#contact" class="btn-primary">Initialize Contact</a>
-            <a href="#research" class="btn-outline">View Research</a>
-        </div>
-        <div class="hero-socials">
-            <a href="https://www.linkedin.com/in/mubinhossainomio/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/1Omio12" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.facebook.com/mubin.hossain.omio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="mailto:omiomho1@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-        </div>
-    </div>
-    <div class="hero-photo-side">
-        <div class="photo-frame">
-            <img src="Omio Pic.png" alt="Mubin Hossain Omio"
-                 onerror="this.onerror=null;this.src='https://api.dicebear.com/7.x/notionists/svg?seed=Omio&backgroundColor=0d0f18';">
-            <div class="photo-badge tl">NSE · MIST</div>
-            <div class="photo-badge br">CGPA 3.90</div>
-        </div>
-        <div class="photo-stats">
-            <div class="stat-pill">
-                <div class="num">2</div>
-                <div class="label">Q2 Papers</div>
-            </div>
-            <div class="stat-pill">
-                <div class="num">5+</div>
-                <div class="label">Awards</div>
-            </div>
-            <div class="stat-pill">
-                <div class="num">4+</div>
-                <div class="label">Projects</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== PUBLICATIONS ===================== -->
-<section id="publications">
-    <div class="section-label">Peer-Reviewed Work</div>
-    <h2 class="section-title">Journal <em>Publications</em></h2>
-
-    <div class="pub-card reveal">
-        <span class="pub-badge published">Published</span>
-        <p class="pub-title">Development of a real-time radiation detection system that uses IoT to provide real-time monitoring in custom-built website</p>
-        <p class="pub-journal">Omio, M. H., & Mollah, A. S. (2026). Health Physics.</p>
-        <a href="https://doi.org/10.1097/HP.0000000000002127" target="_blank" class="pub-doi">DOI: 10.1097/HP.0000000000002127 ↗</a>
+    <!-- INTRO OVERLAY -->
+    <div id="intro-overlay" class="fixed inset-0 z-[9999] bg-[#050a12] flex flex-col items-center justify-center overflow-hidden select-none">
+        <div class="scan-line"></div>
+        <div class="absolute w-[500px] h-[500px] bg-primary/15 rounded-full blur-[100px] animate-pulse"></div>
+        <div class="absolute w-[300px] h-[300px] bg-accent/10 rounded-full blur-[80px] animate-pulse" style="animation-delay:0.5s"></div>
+        <h1 class="relative z-10 text-5xl md:text-8xl font-display font-black text-white tracking-tighter intro-name text-center mx-4 uppercase">
+            Mubin Hossain <span style="color:#38bdf8">Omio</span>
+        </h1>
+        <div class="h-px opacity-0 intro-line my-6 relative z-10" style="background: linear-gradient(90deg, transparent, #38bdf8, #a78bfa, transparent)"></div>
+        <h2 class="relative z-10 text-sm md:text-lg font-mono text-slate-400 opacity-0 intro-title uppercase tracking-[0.4em]">
+            Nuclear Engineer · Nuclear Mechatronics · AI Researcher
+        </h2>
     </div>
 
-    <div class="pub-card reveal">
-        <span class="pub-badge accepted">Accepted — In Press</span>
-        <p class="pub-title">Advanced data analytics and machine learning for geospatial interpolation, anomaly detection, background prediction and emergency evacuation routing in real-time radiation monitoring system</p>
-        <p class="pub-journal">Omio, M. H., Mollah, A. S., & Mahmud, K. Health Physics.</p>
+    <!-- INTERACTIVE BACKGROUND CANVAS -->
+    <canvas id="bg-canvas" style="position:fixed;inset:0;z-index:0;pointer-events:none;width:100%;height:100%"></canvas>
+
+    <!-- SOFT BLOB ACCENTS -->
+    <div style="position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden">
+        <div id="blob1" class="animate-blob" style="position:absolute;top:-10%;right:-5%;width:500px;height:500px;background:rgba(56,189,248,0.07);border-radius:50%;filter:blur(140px)"></div>
+        <div id="blob2" class="animate-blob" style="position:absolute;bottom:-10%;left:-5%;width:400px;height:400px;background:rgba(167,139,250,0.07);border-radius:50%;filter:blur(120px);animation-delay:3s"></div>
+        <div id="blob3" class="animate-blob" style="position:absolute;top:40%;left:40%;width:300px;height:300px;background:rgba(251,191,36,0.04);border-radius:50%;filter:blur(100px);animation-delay:6s"></div>
     </div>
 
-    <div class="pub-card reveal">
-        <span class="pub-badge ongoing">Ongoing Research</span>
-        <p class="pub-title">BSc Thesis: Neutronics, Thermal Hydraulics & Radiation Shielding Analysis of Spent Nuclear Fuel Dry Cask Storage of VVER-1200</p>
-        <p class="pub-journal">Tools: OpenMC · GEANT4 · ANSYS · IoT Digital Twin</p>
-    </div>
-</section>
-
-<!-- ===================== RESEARCH / EXPERIENCE ===================== -->
-<section id="research">
-    <div class="section-label">Career Trajectory</div>
-    <h2 class="section-title">Research &<br><em>Experience</em></h2>
-
-    <div class="timeline">
-        <div class="timeline-item">
-            <div class="timeline-date">Feb 2026 — Present</div>
-            <div class="timeline-role">Research Assistant (Contract)</div>
-            <div class="timeline-org">Dept. of Nuclear Science & Engineering, MIST · Dhaka</div>
-            <ul class="timeline-body">
-                <li>Evaluating portable handheld XRF devices for in-situ heavy element measurement on contaminated land</li>
-                <li>IoT-based georeferencing of field measurements; comparing with WDXRF lab reference methods</li>
-                <li>PI: Dr. Abdus Sattar Mollah, Professor, Dept. of NSE, MIST</li>
-            </ul>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-date">2025 — Present</div>
-            <div class="timeline-role">BSc Thesis Researcher</div>
-            <div class="timeline-org">VVER-1200 Dry Cask Storage Analysis · MIST</div>
-            <ul class="timeline-body">
-                <li>Neutronics (OpenMC) and thermal hydraulics (ANSYS) simulation of VVER-1200 spent fuel dry cask</li>
-                <li>Radiation shielding analysis with GEANT4</li>
-                <li>IoT-based digital twin for real-time radiation and environmental parameter monitoring</li>
-            </ul>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-date">2025</div>
-            <div class="timeline-role">IoT Radiation Detection Researcher</div>
-            <div class="timeline-org">Geiger-Müller · Web Dashboard · MIST</div>
-            <ul class="timeline-body">
-                <li>Developed real-time IoT radiation monitoring using GM counters and custom electronics</li>
-                <li>Published in Health Physics (Q2) — live dashboard with alert generation</li>
-                <li>Designed for resource-limited environments in developing economies</li>
-            </ul>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-date">2019 — Present</div>
-            <div class="timeline-role">Co-Founder & Chairman</div>
-            <div class="timeline-org">Axiom Youth Society · Non-Profit · Bangladesh</div>
-            <ul class="timeline-body">
-                <li>Founded non-profit empowering underprivileged children and families in Bangladesh</li>
-                <li>Community development programs focused on poverty alleviation and youth education</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== PROJECTS ===================== -->
-<section id="projects">
-    <div class="section-label">Portfolio</div>
-    <h2 class="section-title">Selected <em>Projects</em></h2>
-
-    <div class="projects-grid">
-        <div class="project-card">
-            <div class="project-number">01</div>
-            <div class="project-title">RADSAFE — IoT & AI Radiation Safety System</div>
-            <p class="project-desc">Real-time nuclear radiation detection, monitoring and predictive evacuation routing. ESP32-based IoT network with ML analytics and web dashboard. Deployed in resource-limited environments.</p>
-            <div class="project-tags">
-                <span class="tag gold">IoT</span>
-                <span class="tag gold">Python</span>
-                <span class="tag gold">ML</span>
-                <span class="tag gold">ESP32</span>
-            </div>
-            <div class="project-award"><i class="fas fa-trophy" style="font-size:0.75rem;"></i> National Champion (BIIA 2025) · APICTA Merit · Silver Medal IWC 2026</div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-number">02</div>
-            <div class="project-title">VVER-1200 Dry Cask Simulation</div>
-            <p class="project-desc">Computational neutronics, thermal-hydraulics, and shielding analysis for spent nuclear fuel dry cask storage. Full digital twin with IoT environmental monitoring.</p>
-            <div class="project-tags">
-                <span class="tag blue">OpenMC</span>
-                <span class="tag blue">GEANT4</span>
-                <span class="tag blue">ANSYS</span>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-number">03</div>
-            <div class="project-title">Project KIRON</div>
-            <p class="project-desc">National framework for medical isotope sovereignty using a hybrid hub-and-spoke model with blockchain supply chain tracking for oncology networks across Bangladesh.</p>
-            <div class="project-tags">
-                <span class="tag green">Blockchain</span>
-                <span class="tag green">Supply Chain</span>
-                <span class="tag green">Policy</span>
-            </div>
-            <div class="project-award"><i class="fas fa-trophy" style="font-size:0.75rem;"></i> Champion — Future Bangladesh Challenge 2025</div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-number">04</div>
-            <div class="project-title">Spent Fuel Pool Digital Twin</div>
-            <p class="project-desc">Experimental model of helical heat exchanger for spent fuel cooling pool. Controlled heater as dummy fuel; IoT-based digital twin validated via theoretical, experimental, and ANSYS simulation.</p>
-            <div class="project-tags">
-                <span class="tag blue">ANSYS</span>
-                <span class="tag blue">IoT</span>
-                <span class="tag blue">ML Sensors</span>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-number">05</div>
-            <div class="project-title">WebMC — Cloud Monte Carlo Platform</div>
-            <p class="project-desc">Cloud-based platform for OpenMC Monte Carlo nuclear simulations, eliminating the need for high-performance local hardware. React frontend with Flask backend.</p>
-            <div class="project-tags">
-                <span class="tag gold">Cloud</span>
-                <span class="tag gold">React</span>
-                <span class="tag gold">Flask</span>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-number">06</div>
-            <div class="project-title">Autonomous Indoor Radiation Mapping</div>
-            <p class="project-desc">LiDAR-based SLAM with multimodal sensor fusion for autonomous indoor radiation mapping. Real-time geospatial radiation field reconstruction for emergency response.</p>
-            <div class="project-tags">
-                <span class="tag green">LiDAR</span>
-                <span class="tag green">SLAM</span>
-                <span class="tag green">Sensor Fusion</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== ACHIEVEMENTS ===================== -->
-<section id="achievements">
-    <div class="section-label">Honors & Awards</div>
-    <h2 class="section-title">Achievements &<br><em>Recognition</em></h2>
-
-    <div class="achievements-grid">
-        <div class="achievement-card reveal">
-            <div class="achievement-rank">4th</div>
-            <div class="achievement-icon">◆</div>
-            <div class="achievement-scope">International · Taiwan</div>
-            <div class="achievement-title">Asia Pacific ICT Alliance Awards 2025</div>
-            <p class="achievement-detail">Merit Place (4th) among 32 National Champions from across the Asia Pacific region.</p>
-        </div>
-
-        <div class="achievement-card reveal">
-            <div class="achievement-rank">1st</div>
-            <div class="achievement-icon">◆</div>
-            <div class="achievement-scope">National Champion</div>
-            <div class="achievement-title">Bangladesh ICT & Innovation Awards 2025</div>
-            <p class="achievement-detail">Champion among 500+ participants in the national round.</p>
-        </div>
-
-        <div class="achievement-card reveal">
-            <div class="achievement-rank">1st</div>
-            <div class="achievement-icon">◆</div>
-            <div class="achievement-scope">National · Prize: 100k BDT</div>
-            <div class="achievement-title">Future Bangladesh Challenge 2025</div>
-            <p class="achievement-detail">1st Position in national policy-making competition for Project KIRON.</p>
-        </div>
-
-        <div class="achievement-card reveal">
-            <div class="achievement-rank">2nd</div>
-            <div class="achievement-icon">◆</div>
-            <div class="achievement-scope">National</div>
-            <div class="achievement-title">Innovation World Cup 2026</div>
-            <p class="achievement-detail">Silver Medalist. Organized by Dreams of Bangladesh. RADSAFE IoT system recognized nationally.</p>
-        </div>
-
-        <div class="achievement-card reveal">
-            <div class="achievement-rank">Top 3</div>
-            <div class="achievement-icon">◆</div>
-            <div class="achievement-scope">National</div>
-            <div class="achievement-title">BEAR Summit & National Semiconductor Symposium 2025</div>
-            <p class="achievement-detail">Top 3 in Electronics category at the National Semiconductor Symposium.</p>
-        </div>
-
-        <div class="achievement-card reveal">
-            <div class="achievement-rank">1st</div>
-            <div class="achievement-icon">◆</div>
-            <div class="achievement-scope">School Level · 2017</div>
-            <div class="achievement-title">Dhaka University Science Fair 2017</div>
-            <p class="achievement-detail">Champion with laser-operated robotic hand for disabled persons. Also won Adamjee Cantonment College Science Fair.</p>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== MEDIA ===================== -->
-<section id="media">
-    <div class="section-label">Press & Media</div>
-    <h2 class="section-title">Featured <em>Coverage</em></h2>
-
-    <div class="media-grid">
-        <a href="https://www.bvnews24.com/information-technology/news/189087" target="_blank" class="media-card reveal">
-            <div class="media-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
-            <div class="media-outlet">Bangla Vision</div>
-            <div class="media-headline">দেশীয় প্রযুক্তিতে পারমাণবিক বিকিরণ নিরাপত্তায় মুবিনের দারুণ উদ্ভাবন</div>
-            <div class="media-date">31 Oct 2025</div>
-        </a>
-
-        <a href="https://tbsgraduates.net/career/interviews/radsafe-and-bangladeshs-path-to-self-reliance/" target="_blank" class="media-card reveal">
-            <div class="media-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
-            <div class="media-outlet">TBS Graduates</div>
-            <div class="media-headline">RADSAFE and Bangladesh's path to self-reliance</div>
-            <div class="media-date">28 Oct 2025</div>
-        </a>
-
-        <a href="https://www.tbsnews.net/economy/corporates/grand-finale-future-bangladesh-challenge-2025-held-dhaka-1300846" target="_blank" class="media-card reveal">
-            <div class="media-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
-            <div class="media-outlet">TBS News</div>
-            <div class="media-headline">Grand finale of Future Bangladesh Challenge 2025 held in Dhaka</div>
-            <div class="media-date">03 Dec 2025</div>
-        </a>
-
-        <a href="https://cnewsvoice.com/%e0%a6%8f%e0%a6%aa%e0%a6%bf%e0%a6%95%e0%a7%8d%e0%a6%9f%e0%a6%be-%e0%a7%a8%e0%a7%a6%e0%a7%a8%e0%a7%ab-%e0%a6%8f-%e0%a6%ac%e0%a6%be%e0%a6%82%e0%a6%b2%e0%a6%be%e0%a6%a6%e0%a7%87%e0%a6%b6%e0%a7%87/" target="_blank" class="media-card reveal">
-            <div class="media-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
-            <div class="media-outlet">CNewsVoice</div>
-            <div class="media-headline">এপিক্টা ২০২৫-এ বাংলাদেশের বৈশ্বিক প্রযুক্তি মঞ্চে সাফল্যের স্বাক্ষর</div>
-            <div class="media-date">15 Dec 2025</div>
-        </a>
-
-        <a href="https://www.dhakapost.com/technology/416856" target="_blank" class="media-card reveal">
-            <div class="media-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
-            <div class="media-outlet">Dhaka Post</div>
-            <div class="media-headline">এপিক্টা ২০২৫-এ বাংলাদেশের সাফল্য: বৈশ্বিক প্রযুক্তি মঞ্চে উদ্ভাবনের শক্ত অবস্থান</div>
-            <div class="media-date">15 Dec 2025</div>
-        </a>
-
-        <a href="https://en.banglanews24.com/technology/news/bd/189586.details" target="_blank" class="media-card reveal">
-            <div class="media-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
-            <div class="media-outlet">Banglanews24</div>
-            <div class="media-headline">Bangladesh shines at APICTA 2025, bolstering global tech profile</div>
-            <div class="media-date">17 Dec 2025</div>
-        </a>
-
-        <a href="https://www.ntvbd.com/tech/news-1664509" target="_blank" class="media-card reveal">
-            <div class="media-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
-            <div class="media-outlet">NTV Online</div>
-            <div class="media-headline">এপিক্টা ২০২৫-এ পুরস্কার ও স্বীকৃতি পেল একাধিক বাংলাদেশি উদ্ভাবন</div>
-            <div class="media-date">18 Dec 2025</div>
-        </a>
-
-        <a href="https://jagoronexpress.com/details/?pid=4091" target="_blank" class="media-card reveal">
-            <div class="media-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
-            <div class="media-outlet">Jagoron Express</div>
-            <div class="media-headline">এপিক্টা ২০২৫-এ বাংলাদেশের দৃঢ় পদচারণা: বৈশ্বিক প্রযুক্তি মঞ্চে সাফল্যের স্বাক্ষর</div>
-            <div class="media-date">16 Dec 2025</div>
-        </a>
-
-        <a href="https://notunshomoy.com/details.php?id=187169" target="_blank" class="media-card reveal">
-            <div class="media-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
-            <div class="media-outlet">Notun Shomoy</div>
-            <div class="media-headline">এপিক্টা ২০২৫-এ বাংলাদেশের দৃঢ় পদচারণা: বৈশ্বিক প্রযুক্তি মঞ্চে সাফল্যের স্বাক্ষর</div>
-            <div class="media-date">15 Dec 2025</div>
-        </a>
-    </div>
-</section>
-
-<!-- ===================== DEPLOYMENTS ===================== -->
-<section id="deployments" style="padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;">
-    <div style="padding: 4rem 6rem 2rem; background: var(--bg2);">
-        <div class="section-label">Live Demos</div>
-        <h2 class="section-title">Web <em>Deployments</em></h2>
-    </div>
-    <div class="deploy-grid">
-        <a href="https://1omio12.github.io/RADSAFE/" target="_blank" class="deploy-card">
-            <img src="11.png" alt="RADSAFE" onerror="this.style.background='#0d0f18'">
-            <div class="deploy-overlay">
-                <div class="deploy-name">RADSAFE</div>
-                <div class="deploy-desc">Radiation Safety Monitoring</div>
-                <div class="deploy-link">Visit Site <i class="fas fa-arrow-right"></i></div>
-            </div>
-        </a>
-        <a href="https://1omio12.github.io/LEAFY/" target="_blank" class="deploy-card">
-            <img src="22.png" alt="LEAFY" onerror="this.style.background='#0d0f18'">
-            <div class="deploy-overlay">
-                <div class="deploy-name">LEAFY</div>
-                <div class="deploy-desc">Smart Agriculture Solution</div>
-                <div class="deploy-link">Visit Site <i class="fas fa-arrow-right"></i></div>
-            </div>
-        </a>
-        <a href="https://1omio12.github.io/ALAP.AI/" target="_blank" class="deploy-card">
-            <img src="33.png" alt="ALAP.AI" onerror="this.style.background='#0d0f18'">
-            <div class="deploy-overlay">
-                <div class="deploy-name">ALAP.AI</div>
-                <div class="deploy-desc">Conversational AI Interface</div>
-                <div class="deploy-link">Visit Site <i class="fas fa-arrow-right"></i></div>
-            </div>
-        </a>
-    </div>
-</section>
-
-<!-- ===================== SKILLS ===================== -->
-<section id="skills">
-    <div class="section-label">Technical Profile</div>
-    <h2 class="section-title">Skills &<br><em>Toolkit</em></h2>
-
-    <div class="skills-layout">
-        <div>
-            <div class="skill-bar-item reveal">
-                <div class="skill-bar-header">
-                    <span class="skill-name">Computational Nuclear (OpenMC · GEANT4)</span>
-                    <span class="skill-pct">95%</span>
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center max-w-7xl">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="relative w-9 h-9 flex items-center justify-center">
+                    <i class="fas fa-atom text-primary text-xl animate-spin-slow"></i>
+                    <div class="absolute inset-0 bg-primary/15 blur-md rounded-full animate-glow-pulse"></div>
                 </div>
-                <div class="skill-track"><div class="skill-fill" data-pct="95"></div></div>
+                <span class="font-display font-bold text-base tracking-tight hidden sm:block" style="color:var(--text)">MHO</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-7 text-sm font-medium" style="color:var(--text-muted)">
+                <a href="#about" class="hover:text-primary transition-colors duration-200 hover:-translate-y-0.5 inline-block">About</a>
+                <a href="#research" class="hover:text-primary transition-colors duration-200 hover:-translate-y-0.5 inline-block">Research</a>
+                <a href="#publications" class="hover:text-primary transition-colors duration-200 hover:-translate-y-0.5 inline-block">Publications</a>
+                <a href="#projects" class="hover:text-primary transition-colors duration-200 hover:-translate-y-0.5 inline-block">Projects</a>
+                <a href="#achievements" class="hover:text-primary transition-colors duration-200 hover:-translate-y-0.5 inline-block">Awards</a>
+                <a href="#media" class="hover:text-primary transition-colors duration-200 hover:-translate-y-0.5 inline-block">Media</a>
+                <a href="#skills" class="hover:text-primary transition-colors duration-200 hover:-translate-y-0.5 inline-block">Skills</a>
+                <a href="#contact" class="px-5 py-2 btn-primary text-xs rounded-md">Get in Touch</a>
+                <button id="theme-toggle" class="w-9 h-9 rounded-full glass flex items-center justify-center hover:scale-110 transition-transform focus:outline-none" aria-label="Toggle Theme">
+                    <span class="theme-icon-sun text-base">☀️</span>
+                    <span class="theme-icon-moon text-base" style="display:none">🌙</span>
+                </button>
             </div>
-            <div class="skill-bar-item reveal">
-                <div class="skill-bar-header">
-                    <span class="skill-name">AI & Machine Learning</span>
-                    <span class="skill-pct">90%</span>
-                </div>
-                <div class="skill-track"><div class="skill-fill" data-pct="90"></div></div>
-            </div>
-            <div class="skill-bar-item reveal">
-                <div class="skill-bar-header">
-                    <span class="skill-name">Python · C · C++</span>
-                    <span class="skill-pct">85%</span>
-                </div>
-                <div class="skill-track"><div class="skill-fill" data-pct="85"></div></div>
-            </div>
-            <div class="skill-bar-item reveal">
-                <div class="skill-bar-header">
-                    <span class="skill-name">IoT Hardware (Arduino · ESP32)</span>
-                    <span class="skill-pct">85%</span>
-                </div>
-                <div class="skill-track"><div class="skill-fill" data-pct="85"></div></div>
-            </div>
-            <div class="skill-bar-item reveal">
-                <div class="skill-bar-header">
-                    <span class="skill-name">Web Development (Full Stack)</span>
-                    <span class="skill-pct">88%</span>
-                </div>
-                <div class="skill-track"><div class="skill-fill" data-pct="88"></div></div>
-            </div>
-            <div class="skill-bar-item reveal">
-                <div class="skill-bar-header">
-                    <span class="skill-name">ANSYS · MATLAB · FreeCAD</span>
-                    <span class="skill-pct">80%</span>
-                </div>
-                <div class="skill-track"><div class="skill-fill" data-pct="80"></div></div>
+
+            <div class="flex items-center gap-3 md:hidden">
+                <button id="mobile-theme-toggle" class="text-base focus:outline-none">
+                    <span class="theme-icon-sun">☀️</span>
+                    <span class="theme-icon-moon" style="display:none">🌙</span>
+                </button>
+                <button id="mobile-menu-btn" class="text-slate-300 hover:text-primary text-xl p-2 focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
-
-        <div>
-            <div class="toolkit-grid reveal">
-                <span class="toolkit-item">Radiation Detection</span>
-                <span class="toolkit-item">Neutronics</span>
-                <span class="toolkit-item">Thermal Hydraulics</span>
-                <span class="toolkit-item">Geospatial ML</span>
-                <span class="toolkit-item">Arduino</span>
-                <span class="toolkit-item">ESP32</span>
-                <span class="toolkit-item">OpenMC</span>
-                <span class="toolkit-item">GEANT4</span>
-                <span class="toolkit-item">ANSYS</span>
-                <span class="toolkit-item">MATLAB</span>
-                <span class="toolkit-item">FreeCAD</span>
-                <span class="toolkit-item">KiCAD</span>
-                <span class="toolkit-item">React · Flask</span>
-                <span class="toolkit-item">LiDAR SLAM</span>
-                <span class="toolkit-item">Blockchain</span>
-                <span class="toolkit-item">Digital Twin</span>
-                <span class="toolkit-item">LaTeX</span>
-                <span class="toolkit-item">Russian Language</span>
-            </div>
-
-            <div class="edu-block reveal" style="margin-top:2.5rem;">
-                <div class="edu-degree">BSc in Nuclear Science & Engineering</div>
-                <div class="edu-inst">Military Institute of Science & Technology (MIST), Dhaka<br>April 2022 — Present</div>
-                <div class="edu-cgpa">CGPA: 3.90 / 4.00</div>
-            </div>
-
-            <div class="edu-block reveal" style="margin-top:1rem; border-color: rgba(74,158,255,0.25); background: rgba(74,158,255,0.06);">
-                <div style="position:absolute;top:-0.6rem;left:1.5rem;font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.2em;background:var(--bg2);padding:0 0.5rem;color:var(--accent);">LEADERSHIP</div>
-                <div class="edu-degree" style="font-size:0.95rem;">Department Representative, NSE MIST</div>
-                <div class="edu-inst" style="margin-top:0.25rem;">2025 — Present</div>
-                <div class="edu-degree" style="font-size:0.95rem; margin-top:0.75rem;">Co-Founder & Chairman, Axiom Youth Society</div>
-                <div class="edu-inst" style="margin-top:0.25rem;">Non-Profit · 2019 — Present</div>
+        <div id="mobile-menu" class="hidden md:hidden absolute w-full left-0 top-full shadow-xl z-50">
+            <div class="flex flex-col px-6 py-6 space-y-4 text-sm font-medium" style="color:var(--text-muted)">
+                <a href="#about" class="mobile-link block hover:text-primary transition-colors pl-2 border-l-2 border-transparent hover:border-primary">About</a>
+                <a href="#research" class="mobile-link block hover:text-primary transition-colors pl-2 border-l-2 border-transparent hover:border-primary">Research</a>
+                <a href="#publications" class="mobile-link block hover:text-primary transition-colors pl-2 border-l-2 border-transparent hover:border-primary">Publications</a>
+                <a href="#projects" class="mobile-link block hover:text-primary transition-colors pl-2 border-l-2 border-transparent hover:border-primary">Projects</a>
+                <a href="#achievements" class="mobile-link block hover:text-primary transition-colors pl-2 border-l-2 border-transparent hover:border-primary">Awards</a>
+                <a href="#media" class="mobile-link block hover:text-primary transition-colors pl-2 border-l-2 border-transparent hover:border-primary">Media</a>
+                <a href="#skills" class="mobile-link block hover:text-primary transition-colors pl-2 border-l-2 border-transparent hover:border-primary">Skills</a>
+                <a href="#contact" class="mobile-link block text-primary font-bold pl-2 border-l-2 border-primary">Contact</a>
             </div>
         </div>
-    </div>
-</section>
+    </nav>
 
-<!-- ===================== CONTACT ===================== -->
-<section id="contact">
-    <div class="section-label">Get in Touch</div>
-    <h2 class="section-title">Initialize<br><em>Connection</em></h2>
+    <!-- HERO -->
+    <header id="about" class="min-h-screen flex items-center pt-32 pb-20 relative overflow-hidden z-10">
+        <div class="container mx-auto px-4 md:px-8 max-w-7xl grid md:grid-cols-2 gap-16 items-center">
+            <!-- LEFT -->
+            <div class="order-2 md:order-1 space-y-7 text-center md:text-left">
+                <div>
+                    <span class="badge" style="color:var(--primary);border-color:rgba(56,189,248,0.3);background:rgba(56,189,248,0.07)">
+                        <span class="relative flex h-1.5 w-1.5">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-sky-500"></span>
+                        </span>
+                        Open to Collaboration
+                    </span>
+                </div>
 
-    <div class="contact-layout">
-        <div>
-            <p style="font-size:1rem;color:var(--text-dim);line-height:1.8;margin-bottom:3rem;">
-                Available for research collaboration, academic partnerships, and innovative engineering projects bridging nuclear science and AI.
+                <div class="reveal">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-display font-black leading-[1.05] tracking-tight" style="color:var(--text)">
+                        Hi, I'm<br>
+                        <span class="shimmer-text">Mubin Hossain<br>Omio</span>
+                    </h1>
+                </div>
+
+                <div class="h-8 flex items-center justify-center md:justify-start gap-2 reveal" style="animation-delay:0.1s">
+                    <span class="font-mono text-nuclear text-sm">$</span>
+                    <span id="typewriter" class="font-mono text-lg" style="color:var(--text)"></span>
+                    <span class="cursor-blink text-primary font-mono">_</span>
+                </div>
+
+                <p class="leading-relaxed max-w-md mx-auto md:mx-0 text-base reveal" style="color:var(--text-muted);animation-delay:0.2s">
+                    I bridge the gap between <strong style="color:var(--text)">Nuclear Physics</strong> and <strong style="color:var(--text)">AI Engineering</strong>. Leveraging IoT and computational models to enhance radiation safety and efficiency. Published researcher at MIST with international recognition.
+                </p>
+
+                <!-- STAT ROW -->
+                <div class="grid grid-cols-3 gap-3 max-w-sm mx-auto md:mx-0 reveal" style="animation-delay:0.25s">
+                    <div class="stat-card">
+                        <div class="text-2xl font-display font-black text-primary">2</div>
+                        <div class="text-xs mt-1 font-mono" style="color:var(--text-muted)">Q2 Papers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-2xl font-display font-black" style="color:#fbbf24">3.9</div>
+                        <div class="text-xs mt-1 font-mono" style="color:var(--text-muted)">CGPA</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-2xl font-display font-black" style="color:#a78bfa">5+</div>
+                        <div class="text-xs mt-1 font-mono" style="color:var(--text-muted)">Awards</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2 reveal" style="animation-delay:0.3s">
+                    <a href="#contact" class="px-8 py-3 btn-primary text-sm">Contact Me</a>
+                    <div class="flex items-center gap-2">
+                        <a href="https://www.linkedin.com/in/mubinhossainomio/" target="_blank" title="LinkedIn" class="w-11 h-11 flex items-center justify-center rounded-lg glass hover:border-[#0077b5]/50 text-slate-400 hover:text-[#0077b5] transition-all hover:scale-105">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/1Omio12" target="_blank" title="GitHub" class="w-11 h-11 flex items-center justify-center rounded-lg glass text-slate-400 hover:text-white transition-all hover:scale-105">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.facebook.com/mubin.hossain.omio/" target="_blank" title="Facebook" class="w-11 h-11 flex items-center justify-center rounded-lg glass text-slate-400 hover:text-[#1877F2] transition-all hover:scale-105">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="mailto:omiomho1@gmail.com" title="Email" class="w-11 h-11 flex items-center justify-center rounded-lg glass text-slate-400 hover:text-red-400 transition-all hover:scale-105">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT - PROFILE -->
+            <div class="order-1 md:order-2 flex justify-center relative">
+                <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-accent/10 rounded-full blur-3xl animate-pulse"></div>
+                <div class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-[380px] md:h-[380px] animate-float">
+                    <!-- OUTER RING -->
+                    <div class="absolute inset-0 rounded-full p-[3px] profile-ring opacity-70"></div>
+                    <!-- INNER -->
+                    <div class="absolute inset-[3px] rounded-full overflow-hidden glass border border-primary/20 z-10 group">
+                        <div class="absolute inset-0 border-2 border-dashed border-primary/20 rounded-full animate-spin-slow"></div>
+                        <img src="Omio Pic.png"
+                             onerror="this.onerror=null;this.src='https://api.dicebear.com/7.x/notionists/svg?seed=Omio&backgroundColor=0d1a2d';"
+                             alt="Mubin Hossain Omio"
+                             class="w-full h-full rounded-full object-cover relative z-20 transition-transform duration-700 group-hover:scale-105 zoomable">
+                    </div>
+
+                    <!-- FLOATING BADGES -->
+                    <div class="absolute -top-3 right-2 md:-right-4 glass px-3 py-1.5 rounded-full border border-nuclear/30 flex items-center gap-2 animate-float shadow-lg z-30 text-xs" style="animation-delay:0.8s">
+                        <i class="fas fa-radiation text-nuclear text-xs"></i>
+                        <span class="font-display font-bold" style="color:var(--text)">Nuclear Safety</span>
+                    </div>
+                    <div class="absolute top-14 -left-3 md:-left-8 glass px-3 py-1.5 rounded-full border border-accent/30 flex items-center gap-2 animate-float shadow-lg z-30 text-xs" style="animation-delay:2s">
+                        <i class="fas fa-microchip text-accent text-xs"></i>
+                        <span class="font-display font-bold" style="color:var(--text)">IoT Systems</span>
+                    </div>
+                    <div class="absolute bottom-14 -right-3 md:-right-8 glass px-3 py-1.5 rounded-full border border-primary/30 flex items-center gap-2 animate-float shadow-lg z-30 text-xs" style="animation-delay:1.3s">
+                        <i class="fas fa-brain text-primary text-xs"></i>
+                        <span class="font-display font-bold" style="color:var(--text)">AI / ML</span>
+                    </div>
+                    <div class="absolute -bottom-3 left-4 glass px-3 py-1.5 rounded-full border border-emerald/30 flex items-center gap-2 animate-float shadow-lg z-30 text-xs" style="animation-delay:0.3s">
+                        <i class="fas fa-flask text-emerald-400 text-xs"></i>
+                        <span class="font-display font-bold" style="color:var(--text)">Researcher</span>
+                    </div>
+                    <div class="absolute top-1/2 -right-5 md:-right-12 glass px-3 py-1.5 rounded-full border border-orange-400/30 flex items-center gap-2 animate-float shadow-lg z-30 text-xs" style="animation-delay:3.2s">
+                        <i class="fas fa-cogs text-orange-400 text-xs"></i>
+                        <span class="font-display font-bold" style="color:var(--text)">Nuclear Mechatronics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- RESEARCH / EXPERIENCE -->
+    <section id="research" class="py-24 relative z-10">
+        <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+            <div class="flex flex-col items-center mb-16 text-center reveal">
+                <span class="section-tag mb-3">Career Trajectory</span>
+                <h2 class="text-3xl md:text-4xl font-display font-black" style="color:var(--text)">Experience & Research</h2>
+                <div class="glow-line w-24 mt-4 rounded-full"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto relative">
+                <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px" style="background:linear-gradient(to bottom, transparent, rgba(56,189,248,0.3), rgba(167,139,250,0.3), transparent)"></div>
+
+                <!-- Entry 1 -->
+                <div class="relative flex flex-col md:flex-row gap-8 mb-14 group reveal">
+                    <div class="timeline-dot bg-primary mt-6 shadow-[0_0_12px_rgba(56,189,248,0.8)]"></div>
+                    <div class="md:w-1/2 md:text-right md:pr-14 pl-12 md:pl-0">
+                        <span class="badge text-primary" style="border-color:rgba(56,189,248,0.3);background:rgba(56,189,248,0.07)">2026 – Present</span>
+                        <h3 class="text-xl font-display font-bold mt-2 group-hover:text-primary transition-colors" style="color:var(--text)">Research Assistant (Contract)</h3>
+                        <p class="text-sm mt-1" style="color:var(--text-muted)">Dept. of Nuclear Science & Engineering, MIST</p>
+                    </div>
+                    <div class="md:w-1/2 pl-12 md:pl-14">
+                        <div class="glass p-5 rounded-xl border-l-2 border-l-primary/50 hover:border-l-primary card-hover relative corner-tl corner-br">
+                            <p class="text-sm leading-relaxed" style="color:var(--text-muted)">
+                                Evaluating <strong style="color:var(--text)">Handheld XRF Devices</strong> for in-situ measurement of heavy elements on contaminated land. Conducting field & lab evaluations, georeferencing with IoT, and comparing with WDXRF laboratory methods. PI: Dr. Abdus Sattar Mollah.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entry 2 -->
+                <div class="relative flex flex-col md:flex-row gap-8 mb-14 group reveal">
+                    <div class="timeline-dot bg-nuclear mt-6 shadow-[0_0_12px_rgba(251,191,36,0.8)]"></div>
+                    <div class="md:w-1/2 md:order-2 md:pl-14 pl-12">
+                        <span class="badge text-nuclear" style="border-color:rgba(251,191,36,0.3);background:rgba(251,191,36,0.07)">2025 – Ongoing</span>
+                        <h3 class="text-xl font-display font-bold mt-2 group-hover:text-nuclear transition-colors" style="color:var(--text)">BSc Thesis Researcher</h3>
+                        <p class="text-sm mt-1" style="color:var(--text-muted)">VVER-1200 Dry Cask Storage</p>
+                    </div>
+                    <div class="md:w-1/2 md:order-1 md:text-right md:pr-14 pl-12 md:pl-0">
+                        <div class="glass p-5 rounded-xl border-l-2 md:border-l-0 md:border-r-2 border-nuclear/50 hover:border-nuclear card-hover relative corner-tl corner-br">
+                            <p class="text-sm leading-relaxed" style="color:var(--text-muted)">
+                                Neutronics (OpenMC), thermal-hydraulics (Ansys), and shielding analysis (GEANT4) for VVER-1200 spent fuel dry cask. Building IoT-based Digital Twin for real-time radiation monitoring.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entry 3 -->
+                <div class="relative flex flex-col md:flex-row gap-8 mb-14 group reveal">
+                    <div class="timeline-dot bg-accent mt-6 shadow-[0_0_12px_rgba(167,139,250,0.8)]"></div>
+                    <div class="md:w-1/2 md:text-right md:pr-14 pl-12 md:pl-0">
+                        <span class="badge" style="color:var(--accent);border-color:rgba(167,139,250,0.3);background:rgba(167,139,250,0.07)">2025 – Ongoing</span>
+                        <h3 class="text-xl font-display font-bold mt-2 group-hover:text-accent transition-colors" style="color:var(--text)">IoT & ML Researcher</h3>
+                        <p class="text-sm mt-1" style="color:var(--text-muted)">Real-Time Radiation Monitoring</p>
+                    </div>
+                    <div class="md:w-1/2 pl-12 md:pl-14">
+                        <div class="glass p-5 rounded-xl border-l-2 border-l-accent/50 hover:border-l-accent card-hover relative corner-tl corner-br">
+                            <p class="text-sm leading-relaxed" style="color:var(--text-muted)">
+                                Two papers published/accepted in <strong style="color:var(--text)">Health Physics Journal (Q2)</strong>. RADSAFE IoT system and advanced ML for geospatial interpolation, anomaly detection, and evacuation routing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entry 4 -->
+                <div class="relative flex flex-col md:flex-row gap-8 group reveal">
+                    <div class="timeline-dot bg-slate-500 mt-6"></div>
+                    <div class="md:w-1/2 md:order-2 md:pl-14 pl-12">
+                        <span class="badge" style="color:var(--text-muted);border-color:rgba(100,116,139,0.3);background:rgba(100,116,139,0.07)">2019 – Present</span>
+                        <h3 class="text-xl font-display font-bold mt-2" style="color:var(--text)">Co-founder & Chairman</h3>
+                        <p class="text-sm mt-1" style="color:var(--text-muted)">Axiom Youth Society (Non-Profit)</p>
+                    </div>
+                    <div class="md:w-1/2 md:order-1 md:text-right md:pr-14 pl-12 md:pl-0">
+                        <div class="glass p-5 rounded-xl border-l-2 md:border-l-0 md:border-r-2 border-slate-600 card-hover">
+                            <p class="text-sm leading-relaxed" style="color:var(--text-muted)">
+                                Founded non-profit dedicated to poverty alleviation, youth empowerment, and community development programs for underprivileged children in Bangladesh.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="py-24 relative z-10" style="background: linear-gradient(180deg, transparent, rgba(56,189,248,0.02), transparent)">
+        <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+            <div class="flex flex-col items-center mb-16 text-center reveal">
+                <span class="section-tag mb-3">Scholarly Work</span>
+                <h2 class="text-3xl md:text-4xl font-display font-black" style="color:var(--text)">Journal Publications</h2>
+                <div class="glow-line w-24 mt-4 rounded-full"></div>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="glass rounded-xl p-6 card-hover reveal pub-card">
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="badge text-emerald-400" style="border-color:rgba(52,211,153,0.3);background:rgba(52,211,153,0.07)">Published · 2026</span>
+                        <span class="badge text-primary" style="border-color:rgba(56,189,248,0.3);background:rgba(56,189,248,0.07)">Health Physics · Q2</span>
+                    </div>
+                    <h3 class="font-display font-bold text-base mb-2" style="color:var(--text)">Development of a Real-Time Radiation Detection System Using IoT</h3>
+                    <p class="text-sm leading-relaxed mb-3" style="color:var(--text-muted)">
+                        Omio, M. H., & Mollah, A. S. (2026). Development of a real-time radiation detection system that uses IoT to provide real-time monitoring in custom-built website. <em>Health Physics.</em>
+                    </p>
+                    <p class="font-mono text-xs" style="color:var(--text-muted)">DOI: 10.1097/HP.0000000000002127</p>
+                </div>
+
+                <div class="glass rounded-xl p-6 card-hover reveal pub-card" style="animation-delay:0.1s">
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="badge" style="color:#fbbf24;border-color:rgba(251,191,36,0.3);background:rgba(251,191,36,0.07)">Accepted · In Press</span>
+                        <span class="badge text-primary" style="border-color:rgba(56,189,248,0.3);background:rgba(56,189,248,0.07)">Health Physics · Q2</span>
+                    </div>
+                    <h3 class="font-display font-bold text-base mb-2" style="color:var(--text)">Advanced Data Analytics & ML for Real-Time Radiation Monitoring</h3>
+                    <p class="text-sm leading-relaxed" style="color:var(--text-muted)">
+                        Omio, M. H., Mollah, A. S., & Mahmud, K. (in press). Advanced data analytics and machine learning for geospatial interpolation, anomaly detection, background prediction and emergency evacuation routing in real-time radiation monitoring system. <em>Health Physics.</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-24 relative z-10">
+        <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+                <div>
+                    <span class="section-tag block mb-2">Portfolio</span>
+                    <h2 class="text-3xl md:text-4xl font-display font-black" style="color:var(--text)">Selected Projects</h2>
+                </div>
+                <a href="https://github.com/1Omio12" target="_blank" class="hidden md:flex items-center gap-2 text-primary hover:text-sky-300 transition-colors text-sm font-mono">
+                    View GitHub <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- RADSAFE -->
+                <div class="group glass rounded-2xl overflow-hidden card-hover flex flex-col h-full hover:border-primary/50 border border-transparent">
+                    <div class="h-48 relative overflow-hidden bg-slate-900">
+                        <img src="radsafe_image.png" alt="RADSAFE-IoT" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 zoomable">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute top-3 left-3">
+                            <span class="badge text-primary" style="border-color:rgba(56,189,248,0.4);background:rgba(5,10,18,0.8)">IoT · AI · ML</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-display font-bold mb-2" style="color:var(--text)">RADSAFE-IoT</h3>
+                        <p class="text-sm flex-1 mb-4" style="color:var(--text-muted)">
+                            Real-time radiation monitoring system using ESP32 & Geiger-Müller counters. AI-powered predictive analytics and smart evacuation routing. Multiple national & international awards.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge text-primary" style="border-color:rgba(56,189,248,0.2);background:rgba(56,189,248,0.05)">ESP32</span>
+                            <span class="badge text-primary" style="border-color:rgba(56,189,248,0.2);background:rgba(56,189,248,0.05)">Python</span>
+                            <span class="badge text-primary" style="border-color:rgba(56,189,248,0.2);background:rgba(56,189,248,0.05)">ML</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VVER-1200 -->
+                <div class="group glass rounded-2xl overflow-hidden card-hover flex flex-col h-full hover:border-nuclear/50 border border-transparent">
+                    <div class="h-48 relative overflow-hidden bg-slate-900">
+                        <img src="vver-1200_img.jpeg" alt="VVER-1200" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 zoomable">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute top-3 left-3">
+                            <span class="badge" style="color:#fbbf24;border-color:rgba(251,191,36,0.4);background:rgba(5,10,18,0.8)">Nuclear · CFD</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-display font-bold mb-2" style="color:var(--text)">VVER-1200 Simulation</h3>
+                        <p class="text-sm flex-1 mb-4" style="color:var(--text-muted)">
+                            Comprehensive computational analysis of Dry Cask Storage — neutronics, thermal-hydraulics, shielding integrity, plus IoT-based Digital Twin system.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge text-nuclear" style="border-color:rgba(251,191,36,0.2);background:rgba(251,191,36,0.05)">OpenMC</span>
+                            <span class="badge text-nuclear" style="border-color:rgba(251,191,36,0.2);background:rgba(251,191,36,0.05)">Ansys</span>
+                            <span class="badge text-nuclear" style="border-color:rgba(251,191,36,0.2);background:rgba(251,191,36,0.05)">GEANT4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project KIRON -->
+                <div class="group glass rounded-2xl overflow-hidden card-hover flex flex-col h-full hover:border-accent/50 border border-transparent">
+                    <div class="h-48 relative overflow-hidden bg-slate-900">
+                        <img src="kiron.png" alt="Project KIRON" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 zoomable">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute top-3 left-3">
+                            <span class="badge" style="color:#a78bfa;border-color:rgba(167,139,250,0.4);background:rgba(5,10,18,0.8)">Policy · Blockchain</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-display font-bold mb-2" style="color:var(--text)">Project KIRON</h3>
+                        <p class="text-sm flex-1 mb-4" style="color:var(--text-muted)">
+                            National framework for medical isotope sovereignty using hub-and-spoke model with blockchain supply chain tracking. Champion — Future Bangladesh Challenge 2025.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge text-accent" style="border-color:rgba(167,139,250,0.2);background:rgba(167,139,250,0.05)">Blockchain</span>
+                            <span class="badge text-accent" style="border-color:rgba(167,139,250,0.2);background:rgba(167,139,250,0.05)">Supply Chain</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Twin -->
+                <div class="group glass rounded-2xl overflow-hidden card-hover flex flex-col h-full hover:border-primary/50 border border-transparent">
+                    <div class="h-48 relative overflow-hidden bg-slate-900 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-cube text-5xl text-primary/40 mb-2"></i>
+                            <p class="text-xs font-mono text-slate-500">Digital Twin System</p>
+                        </div>
+                        <div class="absolute top-3 left-3">
+                            <span class="badge text-primary" style="border-color:rgba(56,189,248,0.4);background:rgba(5,10,18,0.8)">IoT · ML · Ongoing</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-display font-bold mb-2" style="color:var(--text)">Digital Twin — Spent Fuel Pool</h3>
+                        <p class="text-sm flex-1 mb-4" style="color:var(--text-muted)">
+                            Experimental helical heat exchanger model with controlled heater as dummy fuel. IoT-based Digital Twin validated against theoretical, experimental, and Ansys simulation.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge text-primary" style="border-color:rgba(56,189,248,0.2);background:rgba(56,189,248,0.05)">IoT</span>
+                            <span class="badge text-primary" style="border-color:rgba(56,189,248,0.2);background:rgba(56,189,248,0.05)">Ansys</span>
+                            <span class="badge text-primary" style="border-color:rgba(56,189,248,0.2);background:rgba(56,189,248,0.05)">ML</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Robotic Hand -->
+                <div class="group glass rounded-2xl overflow-hidden card-hover flex flex-col h-full hover:border-slate-400/50 border border-transparent">
+                    <div class="h-48 relative overflow-hidden bg-slate-900">
+                        <img src="robotichand.jpeg" alt="Robotic Hand" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 zoomable">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute top-3 left-3">
+                            <span class="badge text-slate-300" style="border-color:rgba(148,163,184,0.4);background:rgba(5,10,18,0.8)">Robotics · 2017</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-display font-bold mb-2" style="color:var(--text)">Robotic Hand</h3>
+                        <p class="text-sm flex-1 mb-3" style="color:var(--text-muted)">
+                            Laser-operated robotic hand enabling basic hand functions for disabled individuals.
+                        </p>
+                        <div class="text-xs font-mono mb-3" style="color:#fbbf24">🏆 Champion — DU Science Fair 2017</div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge text-slate-400" style="border-color:rgba(148,163,184,0.2);background:rgba(148,163,184,0.05)">Robotics</span>
+                            <span class="badge text-slate-400" style="border-color:rgba(148,163,184,0.2);background:rgba(148,163,184,0.05)">Laser</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WebMC -->
+                <div class="group glass rounded-2xl overflow-hidden card-hover flex flex-col h-full hover:border-primary/50 border border-transparent">
+                    <div class="h-48 relative overflow-hidden bg-slate-900">
+                        <img src="Webmc.jpeg" alt="WebMC" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 zoomable">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute top-3 left-3">
+                            <span class="badge text-primary" style="border-color:rgba(56,189,248,0.4);background:rgba(5,10,18,0.8)">Cloud · Web</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-display font-bold mb-2" style="color:var(--text)">WebMC</h3>
+                        <p class="text-sm flex-1 mb-4" style="color:var(--text-muted)">
+                            Cloud-based platform for OpenMC Monte Carlo simulations. Eliminates the need for high-performance local hardware.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge text-primary" style="border-color:rgba(56,189,248,0.2);background:rgba(56,189,248,0.05)">React</span>
+                            <span class="badge text-primary" style="border-color:rgba(56,189,248,0.2);background:rgba(56,189,248,0.05)">Flask</span>
+                            <span class="badge text-primary" style="border-color:rgba(56,189,248,0.2);background:rgba(56,189,248,0.05)">OpenMC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPLOYMENTS -->
+    <section id="deployments" class="py-24 relative z-10" style="background: linear-gradient(180deg, transparent, rgba(13,26,45,0.4), transparent)">
+        <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+            <div class="flex flex-col items-center mb-16 text-center reveal">
+                <span class="section-tag mb-3">Live Demos</span>
+                <h2 class="text-3xl md:text-4xl font-display font-black" style="color:var(--text)">Web Deployments</h2>
+                <div class="glow-line w-24 mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <a href="https://1omio12.github.io/RADSAFE/" target="_blank" class="group relative overflow-hidden rounded-2xl h-64 card-hover shadow-lg hover:shadow-primary/20 reveal">
+                    <div class="absolute inset-0 bg-slate-900/80 group-hover:bg-slate-900/40 transition-colors z-10"></div>
+                    <img src="11.png" alt="RADSAFE" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 zoomable">
+                    <div class="absolute inset-0 z-20 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-display font-black text-white mb-1">RADSAFE</h3>
+                        <p class="text-slate-300 text-sm opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity transform md:translate-y-2 group-hover:translate-y-0 duration-300">Radiation Safety Monitoring</p>
+                        <span class="text-primary text-sm font-display font-bold mt-2 flex items-center gap-2">Visit Site <i class="fas fa-external-link-alt text-xs"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://1omio12.github.io/LEAFY/" target="_blank" class="group relative overflow-hidden rounded-2xl h-64 card-hover shadow-lg hover:shadow-emerald-500/20 reveal" style="animation-delay:0.1s">
+                    <div class="absolute inset-0 bg-slate-900/80 group-hover:bg-slate-900/40 transition-colors z-10"></div>
+                    <img src="22.png" alt="LEAFY" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 zoomable">
+                    <div class="absolute inset-0 z-20 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-display font-black text-white mb-1">LEAFY</h3>
+                        <p class="text-slate-300 text-sm opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity transform md:translate-y-2 group-hover:translate-y-0 duration-300">Smart Agriculture Solution</p>
+                        <span class="text-emerald-400 text-sm font-display font-bold mt-2 flex items-center gap-2">Visit Site <i class="fas fa-external-link-alt text-xs"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://1omio12.github.io/ALAP.AI/" target="_blank" class="group relative overflow-hidden rounded-2xl h-64 card-hover shadow-lg hover:shadow-purple-500/20 reveal" style="animation-delay:0.2s">
+                    <div class="absolute inset-0 bg-slate-900/80 group-hover:bg-slate-900/40 transition-colors z-10"></div>
+                    <img src="33.png" alt="ALAP.AI" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 zoomable">
+                    <div class="absolute inset-0 z-20 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-display font-black text-white mb-1">ALAP.AI</h3>
+                        <p class="text-slate-300 text-sm opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity transform md:translate-y-2 group-hover:translate-y-0 duration-300">Conversational AI Interface</p>
+                        <span class="text-accent text-sm font-display font-bold mt-2 flex items-center gap-2">Visit Site <i class="fas fa-external-link-alt text-xs"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="py-24 relative z-10">
+        <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+            <div class="flex flex-col items-center mb-16 text-center reveal">
+                <span class="section-tag mb-3">Honors & Awards</span>
+                <h2 class="text-3xl md:text-4xl font-display font-black" style="color:var(--text)">Achievements</h2>
+                <div class="glow-line w-24 mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- APICTA -->
+                <div class="glass p-6 rounded-2xl border-l-4 border-yellow-500 card-hover reveal">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="badge" style="color:#fbbf24;border-color:rgba(251,191,36,0.3);background:rgba(251,191,36,0.07)">International · Taiwan</span>
+                        <span class="text-xs font-mono" style="color:var(--text-muted)">4th / 32 Nations</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold mb-1" style="color:var(--text)">Asia Pacific ICT Alliance (APICTA) 2025</h3>
+                    <p class="text-sm mb-4" style="color:var(--text-muted)"><strong class="text-white">Merit Place (4th)</strong> among 32 National Champions in Taiwan.</p>
+                    <div class="flex overflow-x-auto snap-x snap-mandatory gap-2 pb-2 h-44 no-scrollbar">
+                        <div class="snap-center shrink-0 w-full h-full rounded-xl overflow-hidden border border-slate-700 relative"><img src="Apicta1.jpeg" alt="APICTA 1" class="absolute inset-0 w-full h-full object-cover zoomable"></div>
+                        <div class="snap-center shrink-0 w-full h-full rounded-xl overflow-hidden border border-slate-700 relative"><img src="Apicta2.jpeg" alt="APICTA 2" class="absolute inset-0 w-full h-full object-cover zoomable"></div>
+                        <div class="snap-center shrink-0 w-full h-full rounded-xl overflow-hidden border border-slate-700 relative"><img src="apicta3.jpeg" alt="APICTA 3" class="absolute inset-0 w-full h-full object-cover zoomable"></div>
+                    </div>
+                    <p class="text-[10px] text-center font-mono mt-1" style="color:var(--text-muted)">← Swipe →</p>
+                </div>
+
+                <!-- Bangladesh ICT -->
+                <div class="glass p-6 rounded-2xl border-l-4 border-primary card-hover reveal" style="animation-delay:0.1s">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="badge text-primary" style="border-color:rgba(56,189,248,0.3);background:rgba(56,189,248,0.07)">National Champion</span>
+                        <span class="text-xs font-mono text-yellow-400">🏆 1st Place · 500+ Entries</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold mb-1" style="color:var(--text)">Bangladesh ICT & Innovation Awards 2025</h3>
+                    <p class="text-sm mb-4" style="color:var(--text-muted)">Champion among 500+ participants nationwide.</p>
+                    <div class="h-44 rounded-xl overflow-hidden relative border border-slate-700">
+                        <img src="BIIN.JPG" alt="BIIN Award" class="absolute inset-0 w-full h-full object-cover zoomable">
+                    </div>
+                </div>
+
+                <!-- Future Bangladesh -->
+                <div class="glass p-6 rounded-2xl border-l-4 border-primary card-hover reveal">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="badge text-primary" style="border-color:rgba(56,189,248,0.3);background:rgba(56,189,248,0.07)">National Champion</span>
+                        <span class="text-xs font-mono" style="color:var(--text-muted)">Prize: 100k BDT</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold mb-1" style="color:var(--text)">Future Bangladesh Challenge 2025</h3>
+                    <p class="text-sm mb-4" style="color:var(--text-muted)"><strong class="text-white">1st Position</strong> in national policy-making competition.</p>
+                    <div class="h-44 rounded-xl overflow-hidden relative border border-slate-700">
+                        <img src="fbc.png" alt="FBC Award" class="absolute inset-0 w-full h-full object-cover zoomable">
+                    </div>
+                </div>
+
+                <!-- Innovation World Cup -->
+                <div class="glass p-6 rounded-2xl border-l-4 border-slate-400 card-hover reveal" style="animation-delay:0.1s">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="badge text-slate-300" style="border-color:rgba(148,163,184,0.3);background:rgba(148,163,184,0.07)">National</span>
+                        <span class="text-xs font-mono text-slate-400">Silver Medal · 2026</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold mb-1" style="color:var(--text)">Innovation World Cup 2026</h3>
+                    <p class="text-sm mb-4" style="color:var(--text-muted)"><strong class="text-white">Silver Medalist</strong>. Organized by Dreams of Bangladesh.</p>
+                    <div class="flex overflow-x-auto snap-x snap-mandatory gap-2 pb-2 h-44 no-scrollbar">
+                        <div class="snap-center shrink-0 w-full h-full rounded-xl overflow-hidden border border-slate-700 relative"><img src="iin.jpeg" alt="IWC 1" class="absolute inset-0 w-full h-full object-cover zoomable"></div>
+                        <div class="snap-center shrink-0 w-full h-full rounded-xl overflow-hidden border border-slate-700 relative"><img src="iin2.jpeg" alt="IWC 2" class="absolute inset-0 w-full h-full object-cover zoomable"></div>
+                    </div>
+                    <p class="text-[10px] text-center font-mono mt-1" style="color:var(--text-muted)">← Swipe →</p>
+                </div>
+
+                <!-- BEAR Summit -->
+                <div class="glass p-6 rounded-2xl border-l-4 border-purple-500 card-hover reveal">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="badge text-purple-400" style="border-color:rgba(167,139,250,0.3);background:rgba(167,139,250,0.07)">National · Top 3</span>
+                        <span class="text-xs font-mono" style="color:var(--text-muted)">Electronics Category</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold mb-1" style="color:var(--text)">BEAR Summit & National Semiconductor Symposium</h3>
+                    <p class="text-sm mb-4" style="color:var(--text-muted)">Top 3 position in Electronics category.</p>
+                    <div class="h-44 rounded-xl overflow-hidden relative border border-slate-700">
+                        <img src="bearsum.jpeg" alt="BEAR Summit" class="absolute inset-0 w-full h-full object-cover zoomable">
+                    </div>
+                </div>
+
+                <!-- Science Fair Journey -->
+                <div class="glass p-6 rounded-2xl border-l-4 border-emerald-500 card-hover reveal" style="animation-delay:0.1s">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="badge text-emerald-400" style="border-color:rgba(52,211,153,0.3);background:rgba(52,211,153,0.07)">School Level</span>
+                        <span class="text-xs font-mono" style="color:var(--text-muted)">Multiple Awards</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold mb-1" style="color:var(--text)">School Science Fair Journey</h3>
+                    <p class="text-sm mb-4" style="color:var(--text-muted)">Consistently top positions in inter-school and regional science fairs, showcasing early passion for innovation.</p>
+                    <div class="flex overflow-x-auto snap-x snap-mandatory gap-2 pb-2 h-44 no-scrollbar">
+                        <div class="snap-center shrink-0 w-full h-full rounded-xl overflow-hidden border border-slate-700 relative"><img src="1.jpeg" alt="SF 1" class="absolute inset-0 w-full h-full object-cover zoomable"></div>
+                        <div class="snap-center shrink-0 w-full h-full rounded-xl overflow-hidden border border-slate-700 relative"><img src="2.jpeg" alt="SF 2" class="absolute inset-0 w-full h-full object-cover zoomable"></div>
+                        <div class="snap-center shrink-0 w-full h-full rounded-xl overflow-hidden border border-slate-700 relative"><img src="3.jpeg" alt="SF 3" class="absolute inset-0 w-full h-full object-cover zoomable"></div>
+                        <div class="snap-center shrink-0 w-full h-full rounded-xl overflow-hidden border border-slate-700 relative"><img src="4.jpeg" alt="SF 4" class="absolute inset-0 w-full h-full object-cover zoomable"></div>
+                        <div class="snap-center shrink-0 w-full h-full rounded-xl overflow-hidden border border-slate-700 relative"><img src="5.jpeg" alt="SF 5" class="absolute inset-0 w-full h-full object-cover zoomable"></div>
+                    </div>
+                    <p class="text-[10px] text-center font-mono mt-1" style="color:var(--text-muted)">← Swipe →</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEDIA -->
+    <section id="media" class="py-24 relative z-10" style="background: linear-gradient(180deg, transparent, rgba(13,26,45,0.3), transparent)">
+        <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+            <div class="flex flex-col items-center mb-16 text-center reveal">
+                <span class="section-tag mb-3">Press & Media</span>
+                <h2 class="text-3xl md:text-4xl font-display font-black" style="color:var(--text)">Featured Interviews</h2>
+                <div class="glow-line w-24 mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="https://www.bvnews24.com/information-technology/news/189087" target="_blank" class="group glass p-0 rounded-2xl overflow-hidden border border-slate-800 hover:border-primary/30 card-hover flex flex-col h-full reveal">
+                    <div class="h-44 overflow-hidden relative">
+                        <img src="banglainter.png" alt="Bangla Vision" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 zoomable">
+                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/25 transition-colors"></div>
+                        <div class="absolute top-3 right-3 bg-red-600 text-white text-[9px] font-display font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Bangla Vision</div>
+                        <div class="absolute bottom-3 left-3 text-white/70 text-xs font-mono flex items-center gap-1"><i class="far fa-calendar-alt text-[10px]"></i> 31 Oct 2025</div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="text-sm font-display font-bold mb-3 group-hover:text-primary transition-colors leading-snug" style="color:var(--text)">দেশীয় প্রযুক্তিতে পারমাণবিক বিকিরণ নিরাপত্তায় মুবিনের উদ্ভাবন</h3>
+                        <span class="text-primary text-xs font-mono flex items-center mt-auto gap-1 group-hover:translate-x-1 transition-transform">Read Story <i class="fas fa-arrow-right text-[9px]"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://tbsgraduates.net/career/interviews/radsafe-and-bangladeshs-path-to-self-reliance/" target="_blank" class="group glass p-0 rounded-2xl overflow-hidden border border-slate-800 hover:border-primary/30 card-hover flex flex-col h-full reveal" style="animation-delay:0.05s">
+                    <div class="h-44 overflow-hidden relative">
+                        <img src="bussinta.png" alt="TBS Graduates" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 zoomable">
+                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/25 transition-colors"></div>
+                        <div class="absolute top-3 right-3 bg-black/80 text-white text-[9px] font-display font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">TBS Graduates</div>
+                        <div class="absolute bottom-3 left-3 text-white/70 text-xs font-mono flex items-center gap-1"><i class="far fa-calendar-alt text-[10px]"></i> 28 Oct 2025</div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="text-sm font-display font-bold mb-3 group-hover:text-primary transition-colors leading-snug" style="color:var(--text)">RADSAFE and Bangladesh's path to self-reliance</h3>
+                        <span class="text-primary text-xs font-mono flex items-center mt-auto gap-1 group-hover:translate-x-1 transition-transform">Read Interview <i class="fas fa-arrow-right text-[9px]"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://www.tbsnews.net/economy/corporates/grand-finale-future-bangladesh-challenge-2025-held-dhaka-1300846" target="_blank" class="group glass p-0 rounded-2xl overflow-hidden border border-slate-800 hover:border-primary/30 card-hover flex flex-col h-full reveal" style="animation-delay:0.1s">
+                    <div class="h-44 overflow-hidden relative">
+                        <img src="fbcinterview.jpg" alt="TBS News" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 zoomable">
+                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/25 transition-colors"></div>
+                        <div class="absolute top-3 right-3 bg-blue-700 text-white text-[9px] font-display font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">TBS News</div>
+                        <div class="absolute bottom-3 left-3 text-white/70 text-xs font-mono flex items-center gap-1"><i class="far fa-calendar-alt text-[10px]"></i> 03 Dec 2025</div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="text-sm font-display font-bold mb-3 group-hover:text-primary transition-colors leading-snug" style="color:var(--text)">Grand finale of Future Bangladesh Challenge 2025</h3>
+                        <span class="text-primary text-xs font-mono flex items-center mt-auto gap-1 group-hover:translate-x-1 transition-transform">Read Story <i class="fas fa-arrow-right text-[9px]"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://cnewsvoice.com/%e0%a6%8f%e0%a6%aa%e0%a6%bf%e0%a6%95%e0%a7%8d%e0%a6%9f%e0%a6%be-%e0%a7%a8%e0%a7%a6%e0%a7%a8%e0%a7%ab-%e0%a6%8f-%e0%a6%ac%e0%a6%be%e0%a6%82%e0%a6%b2%e0%a6%be%e0%a6%a6%e0%a7%87%e0%a6%b6%e0%a7%87/" target="_blank" class="group glass p-0 rounded-2xl overflow-hidden border border-slate-800 hover:border-primary/30 card-hover flex flex-col h-full reveal" style="animation-delay:0.15s">
+                    <div class="h-44 overflow-hidden relative">
+                        <img src="apicta3.png" alt="CNewsVoice" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 zoomable">
+                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/25 transition-colors"></div>
+                        <div class="absolute top-3 right-3 bg-green-600 text-white text-[9px] font-display font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">CNewsVoice</div>
+                        <div class="absolute bottom-3 left-3 text-white/70 text-xs font-mono flex items-center gap-1"><i class="far fa-calendar-alt text-[10px]"></i> 15 Dec 2025</div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="text-sm font-display font-bold mb-3 group-hover:text-primary transition-colors leading-snug" style="color:var(--text)">এপিক্টা ২০২৫-এ বাংলাদেশের বৈশ্বিক প্রযুক্তি মঞ্চে সাফল্যের স্বাক্ষর</h3>
+                        <span class="text-primary text-xs font-mono flex items-center mt-auto gap-1 group-hover:translate-x-1 transition-transform">Read Story <i class="fas fa-arrow-right text-[9px]"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://www.dhakapost.com/technology/416856" target="_blank" class="group glass p-0 rounded-2xl overflow-hidden border border-slate-800 hover:border-primary/30 card-hover flex flex-col h-full reveal" style="animation-delay:0.2s">
+                    <div class="h-44 overflow-hidden relative">
+                        <img src="apicta3.png" alt="Dhaka Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 zoomable">
+                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/25 transition-colors"></div>
+                        <div class="absolute top-3 right-3 bg-blue-600 text-white text-[9px] font-display font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Dhaka Post</div>
+                        <div class="absolute bottom-3 left-3 text-white/70 text-xs font-mono flex items-center gap-1"><i class="far fa-calendar-alt text-[10px]"></i> 15 Dec 2025</div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="text-sm font-display font-bold mb-3 group-hover:text-primary transition-colors leading-snug" style="color:var(--text)">এপিক্টা ২০২৫-এ বাংলাদেশের সাফল্য: বৈশ্বিক প্রযুক্তি মঞ্চে উদ্ভাবনের শক্ত অবস্থান</h3>
+                        <span class="text-primary text-xs font-mono flex items-center mt-auto gap-1 group-hover:translate-x-1 transition-transform">Read Story <i class="fas fa-arrow-right text-[9px]"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://en.banglanews24.com/technology/news/bd/189586.details" target="_blank" class="group glass p-0 rounded-2xl overflow-hidden border border-slate-800 hover:border-primary/30 card-hover flex flex-col h-full reveal" style="animation-delay:0.25s">
+                    <div class="h-44 overflow-hidden relative">
+                        <img src="apicta3.png" alt="Banglanews24" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 zoomable">
+                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/25 transition-colors"></div>
+                        <div class="absolute top-3 right-3 bg-yellow-600 text-white text-[9px] font-display font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Banglanews24</div>
+                        <div class="absolute bottom-3 left-3 text-white/70 text-xs font-mono flex items-center gap-1"><i class="far fa-calendar-alt text-[10px]"></i> 17 Dec 2025</div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="text-sm font-display font-bold mb-3 group-hover:text-primary transition-colors leading-snug" style="color:var(--text)">Bangladesh shines at APICTA 2025, bolstering global tech profile</h3>
+                        <span class="text-primary text-xs font-mono flex items-center mt-auto gap-1 group-hover:translate-x-1 transition-transform">Read Story <i class="fas fa-arrow-right text-[9px]"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://jagoronexpress.com/details/?pid=4091" target="_blank" class="group glass p-0 rounded-2xl overflow-hidden border border-slate-800 hover:border-primary/30 card-hover flex flex-col h-full reveal" style="animation-delay:0.3s">
+                    <div class="h-44 overflow-hidden relative">
+                        <img src="apicta3.png" alt="Jagoron Express" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 zoomable">
+                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/25 transition-colors"></div>
+                        <div class="absolute top-3 right-3 bg-red-600 text-white text-[9px] font-display font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Jagoron Express</div>
+                        <div class="absolute bottom-3 left-3 text-white/70 text-xs font-mono flex items-center gap-1"><i class="far fa-calendar-alt text-[10px]"></i> 16 Dec 2025</div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="text-sm font-display font-bold mb-3 group-hover:text-primary transition-colors leading-snug" style="color:var(--text)">এপিক্টা ২০২৫-এ বাংলাদেশের দৃঢ় পদচারণা: বৈশ্বিক প্রযুক্তি মঞ্চে সাফল্যের স্বাক্ষর</h3>
+                        <span class="text-primary text-xs font-mono flex items-center mt-auto gap-1 group-hover:translate-x-1 transition-transform">Read Story <i class="fas fa-arrow-right text-[9px]"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://notunshomoy.com/details.php?id=187169" target="_blank" class="group glass p-0 rounded-2xl overflow-hidden border border-slate-800 hover:border-primary/30 card-hover flex flex-col h-full reveal" style="animation-delay:0.35s">
+                    <div class="h-44 overflow-hidden relative">
+                        <img src="apicta3.png" alt="Notun Shomoy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 zoomable">
+                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/25 transition-colors"></div>
+                        <div class="absolute top-3 right-3 bg-orange-600 text-white text-[9px] font-display font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Notun Shomoy</div>
+                        <div class="absolute bottom-3 left-3 text-white/70 text-xs font-mono flex items-center gap-1"><i class="far fa-calendar-alt text-[10px]"></i> 15 Dec 2025</div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="text-sm font-display font-bold mb-3 group-hover:text-primary transition-colors leading-snug" style="color:var(--text)">এপিক্টা ২০২৫-এ বাংলাদেশের দৃঢ় পদচারণা</h3>
+                        <span class="text-primary text-xs font-mono flex items-center mt-auto gap-1 group-hover:translate-x-1 transition-transform">Read Story <i class="fas fa-arrow-right text-[9px]"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://www.ntvbd.com/tech/news-1664509" target="_blank" class="group glass p-0 rounded-2xl overflow-hidden border border-slate-800 hover:border-primary/30 card-hover flex flex-col h-full reveal" style="animation-delay:0.4s">
+                    <div class="h-44 overflow-hidden relative">
+                        <img src="apicta3.png" alt="NTV Online" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 zoomable">
+                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/25 transition-colors"></div>
+                        <div class="absolute top-3 right-3 bg-teal-600 text-white text-[9px] font-display font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">NTV Online</div>
+                        <div class="absolute bottom-3 left-3 text-white/70 text-xs font-mono flex items-center gap-1"><i class="far fa-calendar-alt text-[10px]"></i> 18 Dec 2025</div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="text-sm font-display font-bold mb-3 group-hover:text-primary transition-colors leading-snug" style="color:var(--text)">এপিক্টা ২০২৫-এ পুরস্কার ও স্বীকৃতি পেল একাধিক বাংলাদেশি উদ্ভাবন</h3>
+                        <span class="text-primary text-xs font-mono flex items-center mt-auto gap-1 group-hover:translate-x-1 transition-transform">Read Story <i class="fas fa-arrow-right text-[9px]"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-24 relative z-10">
+        <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+                <div class="reveal">
+                    <span class="section-tag block mb-3">Technical Proficiency</span>
+                    <h3 class="text-2xl font-display font-black mb-8 flex items-center gap-3" style="color:var(--text)">
+                        <i class="fas fa-code text-primary text-xl"></i> Core Technologies
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2 text-sm">
+                                <span style="color:var(--text-muted)">Computational Nuclear (OpenMC)</span>
+                                <span class="font-mono text-primary">95%</span>
+                            </div>
+                            <div class="h-2 rounded-full overflow-hidden" style="background:rgba(56,189,248,0.1)">
+                                <div class="h-full rounded-full skill-fill w-[95%]" style="background:linear-gradient(90deg,#38bdf8,#0ea5e9)"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2 text-sm">
+                                <span style="color:var(--text-muted)">AI & Machine Learning</span>
+                                <span class="font-mono" style="color:#a78bfa">90%</span>
+                            </div>
+                            <div class="h-2 rounded-full overflow-hidden" style="background:rgba(167,139,250,0.1)">
+                                <div class="h-full rounded-full skill-fill w-[90%]" style="background:linear-gradient(90deg,#a78bfa,#7c3aed)"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2 text-sm">
+                                <span style="color:var(--text-muted)">Python / C / C++</span>
+                                <span class="font-mono text-emerald-400">85%</span>
+                            </div>
+                            <div class="h-2 rounded-full overflow-hidden" style="background:rgba(52,211,153,0.1)">
+                                <div class="h-full rounded-full skill-fill w-[85%]" style="background:linear-gradient(90deg,#34d399,#059669)"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2 text-sm">
+                                <span style="color:var(--text-muted)">IoT Hardware (Arduino/ESP32)</span>
+                                <span class="font-mono" style="color:#fbbf24">80%</span>
+                            </div>
+                            <div class="h-2 rounded-full overflow-hidden" style="background:rgba(251,191,36,0.1)">
+                                <div class="h-full rounded-full skill-fill w-[80%]" style="background:linear-gradient(90deg,#fbbf24,#d97706)"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2 text-sm">
+                                <span style="color:var(--text-muted)">Web Tech (HTML/CSS/React/Flask)</span>
+                                <span class="font-mono text-orange-400">88%</span>
+                            </div>
+                            <div class="h-2 rounded-full overflow-hidden" style="background:rgba(251,146,60,0.1)">
+                                <div class="h-full rounded-full skill-fill w-[88%]" style="background:linear-gradient(90deg,#fb923c,#ef4444)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal" style="animation-delay:0.15s">
+                    <span class="section-tag block mb-3">Tools & Stack</span>
+                    <h3 class="text-2xl font-display font-black mb-8 flex items-center gap-3" style="color:var(--text)">
+                        <i class="fas fa-layer-group text-primary text-xl"></i> Toolkit
+                    </h3>
+                    <div class="flex flex-wrap gap-2 mb-10">
+                        <span class="badge text-primary" style="border-color:rgba(56,189,248,0.25);background:rgba(56,189,248,0.06)">Radiation Detection</span>
+                        <span class="badge text-primary" style="border-color:rgba(56,189,248,0.25);background:rgba(56,189,248,0.06)">Neutronics</span>
+                        <span class="badge text-primary" style="border-color:rgba(56,189,248,0.25);background:rgba(56,189,248,0.06)">OpenMC</span>
+                        <span class="badge text-primary" style="border-color:rgba(56,189,248,0.25);background:rgba(56,189,248,0.06)">GEANT4</span>
+                        <span class="badge text-nuclear" style="border-color:rgba(251,191,36,0.25);background:rgba(251,191,36,0.06)">Ansys</span>
+                        <span class="badge text-nuclear" style="border-color:rgba(251,191,36,0.25);background:rgba(251,191,36,0.06)">MATLAB</span>
+                        <span class="badge text-nuclear" style="border-color:rgba(251,191,36,0.25);background:rgba(251,191,36,0.06)">Thermal Hydraulics</span>
+                        <span class="badge text-accent" style="border-color:rgba(167,139,250,0.25);background:rgba(167,139,250,0.06)">Arduino / ESP32</span>
+                        <span class="badge text-accent" style="border-color:rgba(167,139,250,0.25);background:rgba(167,139,250,0.06)">KiCAD</span>
+                        <span class="badge text-accent" style="border-color:rgba(167,139,250,0.25);background:rgba(167,139,250,0.06)">Web Development</span>
+                        <span class="badge text-emerald-400" style="border-color:rgba(52,211,153,0.25);background:rgba(52,211,153,0.06)">FreeCAD</span>
+                        <span class="badge text-emerald-400" style="border-color:rgba(52,211,153,0.25);background:rgba(52,211,153,0.06)">LaTeX</span>
+                        <span class="badge text-slate-300" style="border-color:rgba(148,163,184,0.25);background:rgba(148,163,184,0.06)">Russian Language</span>
+                        <span class="badge text-slate-300" style="border-color:rgba(148,163,184,0.25);background:rgba(148,163,184,0.06)">Geospatial Analytics</span>
+                    </div>
+
+                    <!-- EDUCATION -->
+                    <div class="glass p-6 rounded-2xl border-l-4 border-nuclear relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-nuclear/5 rounded-full blur-2xl"></div>
+                        <div class="relative">
+                            <div class="flex items-center gap-3 mb-3">
+                                <i class="fas fa-graduation-cap text-nuclear text-xl"></i>
+                                <h4 class="font-display font-bold" style="color:var(--text)">Education</h4>
+                            </div>
+                            <p class="font-display font-bold text-base" style="color:var(--text)">BSc in Nuclear Science & Engineering</p>
+                            <p class="text-sm mt-1" style="color:var(--text-muted)">Military Institute of Science & Technology (MIST)</p>
+                            <p class="text-sm mt-1 font-mono" style="color:var(--text-muted)">Dhaka, Bangladesh · 2022 – Present</p>
+                            <div class="flex items-center gap-3 mt-3">
+                                <span class="badge text-nuclear" style="border-color:rgba(251,191,36,0.3);background:rgba(251,191,36,0.1)">CGPA: 3.9 / 4.0</span>
+                                <span class="badge text-primary" style="border-color:rgba(56,189,248,0.3);background:rgba(56,189,248,0.1)">Final Year</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LEADERSHIP -->
+                    <div class="glass p-6 rounded-2xl mt-4">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fas fa-users text-accent text-xl"></i>
+                            <h4 class="font-display font-bold" style="color:var(--text)">Leadership & Volunteering</h4>
+                        </div>
+                        <ul class="space-y-2 text-sm" style="color:var(--text-muted)">
+                            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">›</span>Department Representative, NSE, MIST (2025–Present)</li>
+                            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">›</span>Co-Founder & Chairman, Axiom Youth Society (2019–Present)</li>
+                            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">›</span>President, Monipur High School Innovative Science Club</li>
+                            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">›</span>Executive Member, Josephite Chess Club (2019–20)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-24 relative z-10">
+        <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(180deg, transparent, rgba(56,189,248,0.03), transparent)"></div>
+        <div class="container mx-auto px-4 md:px-8 max-w-5xl relative z-10">
+            <div class="glass p-8 md:p-14 rounded-3xl border relative overflow-hidden reveal" style="border-color:rgba(56,189,248,0.15)">
+                <!-- DECORATIVE -->
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="text-center mb-10 relative">
+                    <span class="section-tag block mb-3">Get In Touch</span>
+                    <h2 class="text-3xl md:text-4xl font-display font-black mb-3" style="color:var(--text)">Initialize Connection</h2>
+                    <p style="color:var(--text-muted)">Collaborate on the future of Nuclear Engineering & AI.</p>
+                    <div class="glow-line w-24 mt-4 mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 relative">
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-11 h-11 rounded-xl glass flex items-center justify-center text-primary shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold mb-0.5" style="color:var(--text)">Email</h4>
+                                <a href="mailto:omiomho1@gmail.com" class="text-sm hover:text-primary transition-colors break-all" style="color:var(--text-muted)">omiomho1@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-11 h-11 rounded-xl glass flex items-center justify-center text-primary shrink-0">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold mb-0.5" style="color:var(--text)">Phone</h4>
+                                <p class="text-sm" style="color:var(--text-muted)">+880 1679-827893</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-11 h-11 rounded-xl glass flex items-center justify-center text-primary shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold mb-0.5" style="color:var(--text)">Location</h4>
+                                <p class="text-sm" style="color:var(--text-muted)">Dhaka, Bangladesh</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-11 h-11 rounded-xl glass flex items-center justify-center text-primary shrink-0">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold mb-0.5" style="color:var(--text)">Languages</h4>
+                                <p class="text-sm" style="color:var(--text-muted)">Bangla · English · Russian · Hindi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="space-y-4" onsubmit="event.preventDefault(); document.getElementById('success-msg').classList.remove('hidden'); this.reset();">
+                        <input type="text" placeholder="Your Name" required class="w-full rounded-xl px-4 py-3 text-sm border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all font-sans" style="background:rgba(5,10,18,0.5);border-color:rgba(56,189,248,0.15);color:var(--text)">
+                        <input type="email" placeholder="Your Email" required class="w-full rounded-xl px-4 py-3 text-sm border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all font-sans" style="background:rgba(5,10,18,0.5);border-color:rgba(56,189,248,0.15);color:var(--text)">
+                        <textarea rows="4" placeholder="Your Message" required class="w-full rounded-xl px-4 py-3 text-sm border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all font-sans resize-none" style="background:rgba(5,10,18,0.5);border-color:rgba(56,189,248,0.15);color:var(--text)"></textarea>
+                        <button type="submit" class="w-full py-3 btn-primary text-sm font-display font-bold rounded-xl tracking-wide">
+                            TRANSMIT MESSAGE
+                        </button>
+                        <div id="success-msg" class="hidden text-emerald-400 text-sm text-center font-mono mt-2">
+                            › Transmission Successful. I'll respond soon.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-10 border-t relative z-10" style="border-color:rgba(56,189,248,0.08);background:rgba(5,10,18,0.8)">
+        <div class="container mx-auto px-4 md:px-8 max-w-7xl text-center">
+            <div class="flex justify-center gap-5 mb-6">
+                <a href="https://www.linkedin.com/in/mubinhossainomio/" target="_blank" class="w-10 h-10 glass rounded-xl flex items-center justify-center text-slate-500 hover:text-[#0077b5] transition-all hover:scale-110"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/1Omio12" target="_blank" class="w-10 h-10 glass rounded-xl flex items-center justify-center text-slate-500 hover:text-white transition-all hover:scale-110"><i class="fab fa-github"></i></a>
+                <a href="https://www.facebook.com/mubin.hossain.omio/" target="_blank" class="w-10 h-10 glass rounded-xl flex items-center justify-center text-slate-500 hover:text-[#1877F2] transition-all hover:scale-110"><i class="fab fa-facebook-f"></i></a>
+                <a href="mailto:omiomho1@gmail.com" class="w-10 h-10 glass rounded-xl flex items-center justify-center text-slate-500 hover:text-red-400 transition-all hover:scale-110"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="font-mono text-xs" style="color:var(--text-muted)">
+                © 2026 Mubin Hossain Omio · All systems nominal.
             </p>
-
-            <div class="contact-info-item">
-                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                <div>
-                    <div class="contact-info-label">Email</div>
-                    <div class="contact-info-val"><a href="mailto:omiomho1@gmail.com">omiomho1@gmail.com</a></div>
-                </div>
-            </div>
-
-            <div class="contact-info-item">
-                <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                <div>
-                    <div class="contact-info-label">Phone</div>
-                    <div class="contact-info-val">+880 1679-827893</div>
-                </div>
-            </div>
-
-            <div class="contact-info-item">
-                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                <div>
-                    <div class="contact-info-label">Location</div>
-                    <div class="contact-info-val">Dhaka, Bangladesh</div>
-                </div>
-            </div>
         </div>
+    </footer>
 
-        <form onsubmit="handleSubmit(event)">
-            <div class="form-group">
-                <label class="form-label">Identity</label>
-                <input type="text" placeholder="Your name">
-            </div>
-            <div class="form-group">
-                <label class="form-label">Email</label>
-                <input type="email" placeholder="your@email.com">
-            </div>
-            <div class="form-group">
-                <label class="form-label">Subject</label>
-                <input type="text" placeholder="Research collaboration / Project inquiry">
-            </div>
-            <div class="form-group">
-                <label class="form-label">Message</label>
-                <textarea rows="5" placeholder="Your message..."></textarea>
-            </div>
-            <button type="submit" class="form-submit">Transmit Message</button>
-            <div id="success-msg" style="display:none;">
-                <br>✓ Transmission Successful — I'll respond within 24 hours.
-            </div>
-        </form>
+    <!-- IMAGE MODAL -->
+    <div id="image-modal" class="fixed inset-0 z-[100] hidden opacity-0 transition-opacity duration-300 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4">
+        <button id="modal-close" class="absolute top-5 right-5 text-white text-4xl hover:text-primary transition-colors focus:outline-none z-50 font-light">&times;</button>
+        <img id="modal-img" src="" alt="Full view" class="max-w-full max-h-[90vh] rounded-2xl shadow-2xl transform scale-95 transition-transform duration-300 object-contain">
     </div>
-</section>
 
-<!-- ===================== FOOTER ===================== -->
-<footer>
-    <div class="footer-copy">© 2026 Mubin Hossain Omio · All systems nominal</div>
-    <div class="footer-socials">
-        <a href="https://www.linkedin.com/in/mubinhossainomio/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/1Omio12" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.facebook.com/mubin.hossain.omio/" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="mailto:omiomho1@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
-</footer>
-
-<!-- Modal -->
-<div id="modal">
-    <button id="modal-close"><i class="fas fa-times"></i></button>
-    <img id="modal-img" src="" alt="">
-</div>
-
-<script>
-// ===================== CURSOR =====================
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursor-ring');
-let mx = 0, my = 0, rx = 0, ry = 0;
-
-document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cursor.style.left = mx + 'px';
-    cursor.style.top = my + 'px';
-});
-
-function animateRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    ring.style.left = rx + 'px';
-    ring.style.top = ry + 'px';
-    requestAnimationFrame(animateRing);
-}
-animateRing();
-
-document.querySelectorAll('a, button, .toolkit-item, .project-card, .achievement-card').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        ring.style.width = '48px'; ring.style.height = '48px';
-        ring.style.borderColor = 'rgba(201,168,76,0.6)';
-    });
-    el.addEventListener('mouseleave', () => {
-        ring.style.width = '32px'; ring.style.height = '32px';
-        ring.style.borderColor = 'rgba(201,168,76,0.4)';
-    });
-});
-
-// ===================== INTRO =====================
-const introEl = document.getElementById('intro');
-const iline = document.getElementById('iline');
-const iline2 = document.getElementById('iline2');
-const introName = document.getElementById('intro-name');
-const introSub = document.getElementById('intro-sub');
-
-setTimeout(() => {
-    iline.style.width = '200px';
-    iline2.style.width = '200px';
-    setTimeout(() => {
-        introName.style.transition = 'opacity 0.6s ease';
-        introName.style.opacity = '1';
+    <script>
+        // INTRO
         setTimeout(() => {
-            introSub.style.transition = 'opacity 0.6s ease';
-            introSub.style.opacity = '1';
-        }, 400);
-    }, 400);
-}, 200);
+            const intro = document.getElementById('intro-overlay');
+            if (intro) {
+                intro.style.transition = 'opacity 0.6s ease';
+                intro.style.opacity = '0';
+                setTimeout(() => intro.remove(), 600);
+            }
+        }, 2200);
 
-setTimeout(() => {
-    introEl.style.transition = 'opacity 0.6s ease';
-    introEl.style.opacity = '0';
-    setTimeout(() => introEl.remove(), 600);
-}, 2400);
-
-// ===================== NAVBAR =====================
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
-});
-
-// ===================== HAMBURGER =====================
-const hamburger = document.getElementById('hamburger');
-const drawer = document.getElementById('mobile-drawer');
-const backdrop = document.getElementById('backdrop');
-const drawerClose = document.getElementById('drawer-close');
-
-hamburger.addEventListener('click', () => {
-    drawer.classList.add('open'); backdrop.classList.add('open');
-});
-function closeDrawer() { drawer.classList.remove('open'); backdrop.classList.remove('open'); }
-drawerClose.addEventListener('click', closeDrawer);
-backdrop.addEventListener('click', closeDrawer);
-drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
-
-// ===================== TYPEWRITER =====================
-const words = ["Nuclear Engineer", "AI Researcher", "IoT Innovator", "Q2 Journal Author", "National Champion"];
-let wi = 0;
-const tw = document.getElementById('tw');
-
-function runTypewriter() {
-    const word = words[wi];
-    let n = 0;
-    const type = setInterval(() => {
-        tw.textContent = word.slice(0, ++n);
-        if (n >= word.length) {
-            clearInterval(type);
-            setTimeout(() => {
-                const del = setInterval(() => {
-                    tw.textContent = word.slice(0, --n);
-                    if (n <= 0) { clearInterval(del); wi = (wi + 1) % words.length; runTypewriter(); }
-                }, 40);
-            }, 2200);
+        // THEME — use html class only (no tailwind dark:)
+        const htmlEl = document.documentElement;
+        function initTheme() {
+            try {
+                const stored = localStorage.theme;
+                if (stored === 'light') { htmlEl.classList.remove('dark'); htmlEl.classList.add('light'); }
+                else { htmlEl.classList.remove('light'); htmlEl.classList.add('dark'); }
+            } catch(e) { htmlEl.classList.add('dark'); }
+            syncThemeIcons();
         }
-    }, 90);
-}
-setTimeout(runTypewriter, 2800);
-
-// ===================== SCROLL REVEAL =====================
-const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-        if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            if (e.target.classList.contains('timeline-item')) io.unobserve(e.target);
+        function syncThemeIcons() {
+            const isLight = htmlEl.classList.contains('light');
+            document.querySelectorAll('.theme-icon-sun').forEach(el => el.style.display = isLight ? 'none' : 'inline');
+            document.querySelectorAll('.theme-icon-moon').forEach(el => el.style.display = isLight ? 'inline' : 'none');
         }
-    });
-}, { threshold: 0.12 });
+        function toggleTheme() {
+            if (htmlEl.classList.contains('dark')) {
+                htmlEl.classList.remove('dark'); htmlEl.classList.add('light');
+                try { localStorage.theme = 'light'; } catch(e){}
+            } else {
+                htmlEl.classList.remove('light'); htmlEl.classList.add('dark');
+                try { localStorage.theme = 'dark'; } catch(e){}
+            }
+            syncThemeIcons();
+            updateCanvasTheme();
+        }
+        initTheme();
+        document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+        document.getElementById('mobile-theme-toggle')?.addEventListener('click', toggleTheme);
 
-document.querySelectorAll('.reveal, .timeline-item, .project-card, .achievement-card').forEach(el => io.observe(el));
+        // INTERACTIVE PARTICLE/ATOM CANVAS BACKGROUND
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let W, H, mouse = { x: -999, y: -999 };
+        const PARTICLE_COUNT = 90;
+        const MAX_DIST = 140;
+        const particles = [];
 
-// ===================== SKILL BARS =====================
-const skillIo = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-        if (e.isIntersecting) {
-            e.target.querySelectorAll('.skill-fill').forEach(bar => {
-                bar.style.width = bar.dataset.pct + '%';
+        function resize() {
+            W = canvas.width = window.innerWidth;
+            H = canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+        window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+        window.addEventListener('mouseleave', () => { mouse.x = -999; mouse.y = -999; });
+
+        const COLORS_DARK  = ['rgba(56,189,248,',  'rgba(167,139,250,', 'rgba(251,191,36,',  'rgba(52,211,153,'];
+        const COLORS_LIGHT = ['rgba(14,165,233,',  'rgba(124,58,237,',  'rgba(217,119,6,',   'rgba(16,185,129,'];
+
+        function getColors() {
+            return htmlEl.classList.contains('light') ? COLORS_LIGHT : COLORS_DARK;
+        }
+
+        class Particle {
+            constructor() { this.reset(true); }
+            reset(init) {
+                this.x = Math.random() * W;
+                this.y = init ? Math.random() * H : (Math.random() < 0.5 ? -10 : H + 10);
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
+                this.r = Math.random() * 2 + 1;
+                this.colorIdx = Math.floor(Math.random() * 4);
+                this.alpha = Math.random() * 0.5 + 0.3;
+                // nucleus ring params (some particles are "atom nodes")
+                this.isAtom = Math.random() < 0.08;
+                this.orbitR = this.isAtom ? Math.random() * 18 + 10 : 0;
+                this.orbitAngle = Math.random() * Math.PI * 2;
+                this.orbitSpeed = (Math.random() - 0.5) * 0.04;
+                this.orbitChild = this.isAtom ? {
+                    angle: Math.random() * Math.PI * 2,
+                    speed: (Math.random() > 0.5 ? 1 : -1) * (0.03 + Math.random() * 0.04)
+                } : null;
+            }
+            update() {
+                // Mouse repel
+                const dx = this.x - mouse.x, dy = this.y - mouse.y;
+                const d = Math.sqrt(dx*dx + dy*dy);
+                if (d < 100) {
+                    const force = (100 - d) / 100 * 0.6;
+                    this.vx += (dx / d) * force;
+                    this.vy += (dy / d) * force;
+                }
+                // Damping
+                this.vx *= 0.98; this.vy *= 0.98;
+                this.x += this.vx; this.y += this.vy;
+                if (this.isAtom) this.orbitAngle += this.orbitSpeed;
+                if (this.orbitChild) this.orbitChild.angle += this.orbitChild.speed;
+                // Wrap
+                if (this.x < -20) this.x = W + 20;
+                if (this.x > W + 20) this.x = -20;
+                if (this.y < -20) this.y = H + 20;
+                if (this.y > H + 20) this.y = -20;
+            }
+            draw() {
+                const cols = getColors();
+                const col = cols[this.colorIdx];
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                ctx.fillStyle = col + this.alpha + ')';
+                ctx.fill();
+                if (this.isAtom) {
+                    // Orbit ring
+                    ctx.beginPath();
+                    ctx.ellipse(this.x, this.y, this.orbitR, this.orbitR * 0.4, this.orbitAngle, 0, Math.PI*2);
+                    ctx.strokeStyle = col + '0.18)';
+                    ctx.lineWidth = 0.7;
+                    ctx.stroke();
+                    // Electron dot
+                    const ex = this.x + Math.cos(this.orbitChild.angle) * this.orbitR;
+                    const ey = this.y + Math.sin(this.orbitChild.angle) * this.orbitR * 0.4;
+                    ctx.beginPath();
+                    ctx.arc(ex, ey, 1.2, 0, Math.PI*2);
+                    ctx.fillStyle = col + '0.8)';
+                    ctx.fill();
+                }
+            }
+        }
+
+        for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
+
+        function updateCanvasTheme() { /* colors update automatically via getColors() */ }
+
+        function drawGrid() {
+            const isLight = htmlEl.classList.contains('light');
+            const gridCol = isLight ? 'rgba(14,165,233,0.05)' : 'rgba(56,189,248,0.035)';
+            const size = 60;
+            ctx.strokeStyle = gridCol;
+            ctx.lineWidth = 0.5;
+            for (let x = 0; x < W; x += size) {
+                ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+            }
+            for (let y = 0; y < H; y += size) {
+                ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, W, H);
+            drawGrid();
+            const cols = getColors();
+            // Draw connections
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const d = Math.sqrt(dx*dx + dy*dy);
+                    if (d < MAX_DIST) {
+                        const alpha = (1 - d / MAX_DIST) * 0.22;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = cols[0] + alpha + ')';
+                        ctx.lineWidth = 0.6;
+                        ctx.stroke();
+                    }
+                }
+                // Mouse attraction lines
+                const mx = particles[i].x - mouse.x, my = particles[i].y - mouse.y;
+                const md = Math.sqrt(mx*mx + my*my);
+                if (md < 160) {
+                    const a = (1 - md/160) * 0.5;
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(mouse.x, mouse.y);
+                    ctx.strokeStyle = cols[2] + a + ')';
+                    ctx.lineWidth = 0.8;
+                    ctx.stroke();
+                }
+            }
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // TYPEWRITER
+        const words = ["Nuclear Engineer", "Nuclear Mechatronics", "IoT Innovator", "AI Researcher", "Published Author", "Problem Solver"];
+        let wi = 0;
+        function typeWriter() {
+            const el = document.getElementById("typewriter");
+            if (!el) return;
+            const word = words[wi];
+            let n = 0;
+            let typeT = setInterval(() => {
+                el.textContent = word.slice(0, n++);
+                if (n > word.length) {
+                    clearInterval(typeT);
+                    setTimeout(() => {
+                        let delT = setInterval(() => {
+                            el.textContent = word.slice(0, n--);
+                            if (n < 0) { clearInterval(delT); wi = (wi + 1) % words.length; typeWriter(); }
+                        }, 45);
+                    }, 2200);
+                }
+            }, 90);
+        }
+        typeWriter();
+
+        // MOBILE MENU
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+        // NAVBAR SCROLL
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            navbar?.classList.toggle('shadow-lg', window.scrollY > 40);
+        });
+
+        // SCROLL REVEAL
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // IMAGE MODAL
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
+
+        function openModal(src) {
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            modalImg.src = src;
+            modalImg.classList.replace('scale-95','scale-100');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            modalImg.classList.replace('scale-100','scale-95');
+            setTimeout(() => { modal.classList.add('hidden'); modalImg.src=''; document.body.style.overflow=''; }, 300);
+        }
+
+        document.querySelectorAll('.zoomable').forEach(img => img.addEventListener('click', e => { e.preventDefault(); openModal(img.src); }));
+        document.getElementById('modal-close')?.addEventListener('click', closeModal);
+        modal?.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal(); });
+
+        // LIGHT MODE INPUT STYLES
+        function applyThemeStyles() {
+            const isLight = htmlEl.classList.contains('light');
+            document.querySelectorAll('input[type="text"], input[type="email"], textarea').forEach(el => {
+                el.style.background = isLight ? 'rgba(255,255,255,0.85)' : 'rgba(5,10,18,0.5)';
+                el.style.color = isLight ? '#0f172a' : '#e2e8f0';
+                el.style.borderColor = isLight ? 'rgba(14,165,233,0.2)' : 'rgba(56,189,248,0.15)';
             });
-            skillIo.unobserve(e.target);
+            // Update blob colors for light mode
+            const blob1 = document.getElementById('blob1');
+            const blob2 = document.getElementById('blob2');
+            const blob3 = document.getElementById('blob3');
+            if (blob1) blob1.style.background = isLight ? 'rgba(14,165,233,0.08)' : 'rgba(56,189,248,0.07)';
+            if (blob2) blob2.style.background = isLight ? 'rgba(124,58,237,0.07)' : 'rgba(167,139,250,0.07)';
+            if (blob3) blob3.style.background = isLight ? 'rgba(217,119,6,0.05)' : 'rgba(251,191,36,0.04)';
         }
-    });
-}, { threshold: 0.3 });
-
-const skillsSection = document.getElementById('skills');
-if (skillsSection) skillIo.observe(skillsSection);
-
-// ===================== FORM =====================
-function handleSubmit(e) {
-    e.preventDefault();
-    const msg = document.getElementById('success-msg');
-    msg.style.display = 'block';
-    setTimeout(() => msg.style.display = 'none', 5000);
-}
-
-// ===================== MODAL =====================
-const modal = document.getElementById('modal');
-const modalImg = document.getElementById('modal-img');
-document.getElementById('modal-close').addEventListener('click', () => modal.classList.remove('open'));
-modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('open'); });
-document.querySelectorAll('.photo-frame img').forEach(img => {
-    img.addEventListener('click', () => {
-        modalImg.src = img.src;
-        modal.classList.add('open');
-    });
-});
-document.addEventListener('keydown', e => { if (e.key === 'Escape') modal.classList.remove('open'); });
-</script>
+        const themeObserver = new MutationObserver(applyThemeStyles);
+        themeObserver.observe(htmlEl, { attributes: true, attributeFilter: ['class'] });
+        applyThemeStyles();
+    </script>
 </body>
 </html>
