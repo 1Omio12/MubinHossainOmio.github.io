@@ -526,26 +526,31 @@
                              class="w-full h-full rounded-full object-cover relative z-20 transition-transform duration-700 group-hover:scale-105 zoomable">
                     </div>
 
-                    <!-- FLOATING BADGES -->
-                    <div class="absolute -top-3 right-2 md:-right-4 glass px-3 py-1.5 rounded-full border border-nuclear/30 flex items-center gap-2 animate-float shadow-lg z-30 text-xs" style="animation-delay:0.8s">
+                    <!-- FLOATING BADGES — evenly around the circle, no overlap -->
+                    <!-- TOP CENTER -->
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 glass px-3 py-1.5 rounded-full border border-nuclear/30 flex items-center gap-2 animate-float shadow-lg z-30 text-xs whitespace-nowrap" style="animation-delay:0.8s">
                         <i class="fas fa-radiation text-nuclear text-xs"></i>
                         <span class="font-display font-bold" style="color:var(--text)">Nuclear Safety</span>
                     </div>
-                    <div class="absolute top-14 -left-3 md:-left-8 glass px-3 py-1.5 rounded-full border border-accent/30 flex items-center gap-2 animate-float shadow-lg z-30 text-xs" style="animation-delay:2s">
+                    <!-- LEFT UPPER -->
+                    <div class="absolute top-[18%] -left-4 md:-left-10 glass px-3 py-1.5 rounded-full border border-accent/30 flex items-center gap-2 animate-float shadow-lg z-30 text-xs whitespace-nowrap" style="animation-delay:2s">
                         <i class="fas fa-microchip text-accent text-xs"></i>
                         <span class="font-display font-bold" style="color:var(--text)">IoT Systems</span>
                     </div>
-                    <div class="absolute bottom-14 -right-3 md:-right-8 glass px-3 py-1.5 rounded-full border border-primary/30 flex items-center gap-2 animate-float shadow-lg z-30 text-xs" style="animation-delay:1.3s">
+                    <!-- LEFT LOWER -->
+                    <div class="absolute top-[62%] -left-4 md:-left-12 glass px-3 py-1.5 rounded-full border border-orange-400/30 flex items-center gap-2 animate-float shadow-lg z-30 text-xs whitespace-nowrap" style="animation-delay:3.2s">
+                        <i class="fas fa-cogs text-orange-400 text-xs"></i>
+                        <span class="font-display font-bold" style="color:var(--text)">Nuclear Mechatronics</span>
+                    </div>
+                    <!-- RIGHT UPPER -->
+                    <div class="absolute top-[18%] -right-4 md:-right-8 glass px-3 py-1.5 rounded-full border border-primary/30 flex items-center gap-2 animate-float shadow-lg z-30 text-xs whitespace-nowrap" style="animation-delay:1.3s">
                         <i class="fas fa-brain text-primary text-xs"></i>
                         <span class="font-display font-bold" style="color:var(--text)">AI / ML</span>
                     </div>
-                    <div class="absolute -bottom-3 left-4 glass px-3 py-1.5 rounded-full border border-emerald/30 flex items-center gap-2 animate-float shadow-lg z-30 text-xs" style="animation-delay:0.3s">
+                    <!-- BOTTOM CENTER -->
+                    <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 glass px-3 py-1.5 rounded-full border border-emerald/30 flex items-center gap-2 animate-float shadow-lg z-30 text-xs whitespace-nowrap" style="animation-delay:0.3s">
                         <i class="fas fa-flask text-emerald-400 text-xs"></i>
                         <span class="font-display font-bold" style="color:var(--text)">Researcher</span>
-                    </div>
-                    <div class="absolute top-1/2 -right-5 md:-right-12 glass px-3 py-1.5 rounded-full border border-orange-400/30 flex items-center gap-2 animate-float shadow-lg z-30 text-xs" style="animation-delay:3.2s">
-                        <i class="fas fa-cogs text-orange-400 text-xs"></i>
-                        <span class="font-display font-bold" style="color:var(--text)">Nuclear Mechatronics</span>
                     </div>
                 </div>
             </div>
