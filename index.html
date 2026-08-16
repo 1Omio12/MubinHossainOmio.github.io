@@ -832,6 +832,173 @@
         </div>
     </section>
 
+    <!-- DIGITAL TWIN: SPENT FUEL POOL -->
+    <section id="digitaltwin" class="py-24 relative z-10" style="background: linear-gradient(180deg, transparent, rgba(56,189,248,0.03), transparent)">
+        <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+            <div class="flex flex-col items-center mb-6 text-center reveal">
+                <span class="section-tag mb-3">Ongoing Project</span>
+                <h2 class="text-3xl md:text-4xl font-display font-black" style="color:var(--text)">Digital Twin — Spent Fuel Pool</h2>
+                <p class="text-lg font-display font-semibold mt-2" style="color:#38bdf8">IoT-Based Real-Time Thermal Monitoring</p>
+                <div class="glow-line w-24 mt-4 rounded-full"></div>
+                <p class="max-w-2xl mt-5 text-sm leading-relaxed reveal" style="color:var(--text-muted)">
+                    An experimental helical heat-exchanger rig — a controlled heater standing in for the spent fuel assembly — instrumented and mirrored by an <strong style="color:var(--text)">IoT-based Digital Twin</strong>. Live thermal readings are validated against theoretical, experimental, and Ansys simulation results, with a machine-learning layer that reconstructs readings for any sensor that fails.
+                </p>
+            </div>
+
+            <!-- Physical + Experimental Setup -->
+            <div class="flex items-center gap-3 mb-8 mt-14 reveal">
+                <i class="fas fa-flask text-primary"></i>
+                <h3 class="text-xl font-display font-bold" style="color:var(--text)">Physical & Experimental Setup</h3>
+                <div class="h-px flex-1" style="background:rgba(56,189,248,0.25)"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="glass p-6 rounded-2xl border-l-4 border-primary card-hover reveal">
+                    <span class="badge text-primary mb-3 inline-block" style="border-color:rgba(56,189,248,0.3);background:rgba(56,189,248,0.07)">Subsection 1</span>
+                    <h4 class="text-lg font-display font-bold mb-2" style="color:var(--text)">Full CAD Model</h4>
+                    <p class="text-sm mb-4" style="color:var(--text-muted)">
+                        Complete 3D assembly of the helical coil heat exchanger loop — hot and cold reservoirs, pumps, and piping — used as the basis for both the physical rig and the digital twin's Ansys reference model.
+                    </p>
+                    <div class="thesis-gallery flex overflow-x-auto snap-x snap-mandatory gap-2 pb-2 h-56 no-scrollbar">
+                        <div class="snap-center shrink-0 w-full h-full rounded-xl overflow-hidden border border-slate-700 relative bg-white">
+                            <img src="full_model.jpg" alt="Digital Twin full CAD model" class="absolute inset-0 w-full h-full object-contain zoomable">
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-center font-mono mt-1" style="color:var(--text-muted)">← Swipe for more →</p>
+                </div>
+
+                <div class="glass p-6 rounded-2xl border-l-4 border-primary card-hover reveal" style="animation-delay:0.05s">
+                    <span class="badge text-primary mb-3 inline-block" style="border-color:rgba(56,189,248,0.3);background:rgba(56,189,248,0.07)">Subsection 2</span>
+                    <h4 class="text-lg font-display font-bold mb-2" style="color:var(--text)">Experimental Bench Rig</h4>
+                    <p class="text-sm mb-4" style="color:var(--text-muted)">
+                        The physically built rig — controlled heater as dummy fuel, hot/cold reservoirs, dual pumps, and instrumented piping — generating the live thermal data the digital twin mirrors.
+                    </p>
+                    <div class="thesis-gallery flex overflow-x-auto snap-x snap-mandatory gap-2 pb-2 h-56 no-scrollbar">
+                        <div class="snap-center shrink-0 w-full h-full rounded-xl overflow-hidden border border-slate-700 relative bg-white">
+                            <img src="experimental_model.jpeg" alt="Digital Twin experimental bench rig" class="absolute inset-0 w-full h-full object-contain zoomable">
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-center font-mono mt-1" style="color:var(--text-muted)">← Swipe for more →</p>
+                </div>
+            </div>
+
+            <!-- HX-DT Dashboard -->
+            <div class="flex items-center gap-3 mb-8 mt-16 reveal">
+                <i class="fas fa-desktop text-emerald-400"></i>
+                <h3 class="text-xl font-display font-bold" style="color:var(--text)">HX·DT — Live Twin Dashboard</h3>
+                <div class="h-px flex-1" style="background:rgba(52,211,153,0.25)"></div>
+            </div>
+
+            <div class="glass p-6 rounded-2xl border-l-4 border-emerald-400 card-hover reveal mb-6">
+                <h4 class="text-lg font-display font-bold mb-2" style="color:var(--text)">3D Twin, Hardware Controls & Live Sensors</h4>
+                <p class="text-sm mb-4" style="color:var(--text-muted)">
+                    The custom HX·DT interface renders the heat exchanger loop in interactive 3D alongside real-time pump/heater controls and a live sensor grid — hot/cold inlet & outlet temperatures, flow rates, and derived thermal performance metrics (heat transfer rate Q, LMTD, U-coefficient, ΔT, and heat transfer area), streamed straight from the rig's hardware.
+                </p>
+                <div class="thesis-gallery flex overflow-x-auto snap-x snap-mandatory gap-2 pb-2 h-72 no-scrollbar">
+                    <div class="snap-center shrink-0 w-full h-full rounded-xl overflow-hidden border border-slate-700 relative bg-white">
+                        <img src="hxdt_dashboard.png" alt="HX-DT digital twin dashboard with 3D view, hardware controls, and live sensor readouts" class="absolute inset-0 w-full h-full object-contain zoomable">
+                    </div>
+                </div>
+                <p class="text-[10px] text-center font-mono mt-1" style="color:var(--text-muted)">← Swipe for more →</p>
+            </div>
+
+            <!-- ML Virtual Sensors -->
+            <div class="flex items-center gap-3 mb-8 mt-16 reveal">
+                <i class="fas fa-brain text-accent"></i>
+                <h3 class="text-xl font-display font-bold" style="color:var(--text)">Machine Learning — Virtual Sensor Reconstruction</h3>
+                <div class="h-px flex-1" style="background:rgba(167,139,250,0.25)"></div>
+            </div>
+
+            <div class="glass p-6 rounded-2xl border-l-4 border-accent card-hover reveal">
+                <h4 class="text-lg font-display font-bold mb-2" style="color:var(--text)">Best Virtual Sensor Performance per Failed Sensor</h4>
+                <p class="text-sm mb-4" style="color:var(--text-muted)">
+                    When a physical sensor drops out, trained ML models reconstruct its expected reading from the remaining live sensors — keeping the twin's thermal picture complete even under hardware failure.
+                </p>
+                <div class="thesis-gallery flex overflow-x-auto snap-x snap-mandatory gap-2 pb-2 h-64 no-scrollbar">
+                    <div class="snap-center shrink-0 w-full h-full rounded-xl overflow-hidden border border-slate-700 relative bg-white">
+                        <img src="fig5_best_per_sensor.png" alt="Best virtual sensor performance per failed sensor" class="absolute inset-0 w-full h-full object-contain zoomable">
+                    </div>
+                </div>
+                <p class="text-[10px] text-center font-mono mt-1" style="color:var(--text-muted)">← Swipe for more →</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RADSAFE-IOT DEEP DIVE -->
+    <section id="radsafe" class="py-24 relative z-10" style="background: linear-gradient(180deg, transparent, rgba(251,191,36,0.03), transparent)">
+        <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+            <div class="flex flex-col items-center mb-6 text-center reveal">
+                <span class="section-tag mb-3">Flagship Project</span>
+                <h2 class="text-3xl md:text-4xl font-display font-black" style="color:var(--text)">RADSAFE-IoT</h2>
+                <p class="text-lg font-display font-semibold mt-2" style="color:#fbbf24">Real-Time Radiation Monitoring & Emergency Response</p>
+                <div class="glow-line w-24 mt-4 rounded-full"></div>
+                <p class="max-w-2xl mt-5 text-sm leading-relaxed reveal" style="color:var(--text-muted)">
+                    A national award-winning real-time radiation monitoring system — ESP32 & Geiger-Müller counters feeding a live mapping dashboard, geospatial ML for interpolation and anomaly detection, and an AI-powered evacuation route planner that reacts to live radiation heatmaps.
+                </p>
+            </div>
+
+            <!-- Live Mapping Dashboard -->
+            <div class="flex items-center gap-3 mb-8 mt-14 reveal">
+                <i class="fas fa-map-marked-alt text-nuclear"></i>
+                <h3 class="text-xl font-display font-bold" style="color:var(--text)">Live Radiation Mapping Dashboard</h3>
+                <div class="h-px flex-1" style="background:rgba(251,191,36,0.25)"></div>
+            </div>
+
+            <div class="glass p-6 rounded-2xl border-l-4 border-nuclear card-hover reveal mb-6">
+                <h4 class="text-lg font-display font-bold mb-2" style="color:var(--text)">Circle Marker Visualization with Statistical Analysis</h4>
+                <p class="text-sm mb-4" style="color:var(--text-muted)">
+                    Live web dashboard plotting every field reading as a color-coded circle marker across the MIST campus, with a legend spanning Normal, Action, Warning, and Emergency radiation levels (μSv/h) and one-click access to the latest logged location.
+                </p>
+                <div class="thesis-gallery flex overflow-x-auto snap-x snap-mandatory gap-2 pb-2 h-72 no-scrollbar">
+                    <div class="snap-center shrink-0 w-full h-full rounded-xl overflow-hidden border border-slate-700 relative bg-white">
+                        <img src="radiation_mapping_dashboard.png" alt="RADSAFE radiation mapping dashboard with circle marker visualization" class="absolute inset-0 w-full h-full object-contain zoomable">
+                    </div>
+                </div>
+                <p class="text-[10px] text-center font-mono mt-1" style="color:var(--text-muted)">← Swipe for more →</p>
+            </div>
+
+            <!-- Geospatial ML Analysis -->
+            <div class="flex items-center gap-3 mb-8 mt-16 reveal">
+                <i class="fas fa-satellite-dish text-primary"></i>
+                <h3 class="text-xl font-display font-bold" style="color:var(--text)">Geospatial Data & ML Analysis</h3>
+                <div class="h-px flex-1" style="background:rgba(56,189,248,0.25)"></div>
+            </div>
+
+            <div class="glass p-6 rounded-2xl border-l-4 border-primary card-hover reveal mb-6">
+                <h4 class="text-lg font-display font-bold mb-2" style="color:var(--text)">Spatial Distribution of Radiation Measurements — MIST & INST</h4>
+                <p class="text-sm mb-4" style="color:var(--text-muted)">
+                    Side-by-side spatial scatter plots of collected radiation readings across two survey sites (MIST and the Institute of Nuclear Science & Technology), color-mapped by dose rate (μSv/h) to reveal hotspot clustering used for downstream geospatial interpolation and anomaly detection models.
+                </p>
+                <div class="thesis-gallery flex overflow-x-auto snap-x snap-mandatory gap-2 pb-2 h-72 no-scrollbar">
+                    <div class="snap-center shrink-0 w-full h-full rounded-xl overflow-hidden border border-slate-700 relative bg-white">
+                        <img src="spatial_distribution_mist_inst.png" alt="Spatial distribution of radiation measurements at MIST and INST" class="absolute inset-0 w-full h-full object-contain zoomable">
+                    </div>
+                </div>
+                <p class="text-[10px] text-center font-mono mt-1" style="color:var(--text-muted)">← Swipe for more →</p>
+            </div>
+
+            <!-- Emergency Evacuation Routing -->
+            <div class="flex items-center gap-3 mb-8 mt-16 reveal">
+                <i class="fas fa-route text-accent"></i>
+                <h3 class="text-xl font-display font-bold" style="color:var(--text)">AI-Powered Emergency Evacuation Routing</h3>
+                <div class="h-px flex-1" style="background:rgba(167,139,250,0.25)"></div>
+            </div>
+
+            <div class="glass p-6 rounded-2xl border-l-4 border-accent card-hover reveal">
+                <h4 class="text-lg font-display font-bold mb-2" style="color:var(--text)">Enhanced Escape Route Map over a Live Radiation Heatmap</h4>
+                <p class="text-sm mb-4" style="color:var(--text-muted)">
+                    Route-planning engine overlaying a generated radiation heatmap (Very Low to Extreme, μSv/h) on satellite imagery, then computing the safest path between two points — steering evacuees around high-dose zones instead of straight-line routing.
+                </p>
+                <div class="thesis-gallery flex overflow-x-auto snap-x snap-mandatory gap-2 pb-2 h-72 no-scrollbar">
+                    <div class="snap-center shrink-0 w-full h-full rounded-xl overflow-hidden border border-slate-700 relative bg-white">
+                        <img src="escape_route_heatmap.png" alt="Enhanced escape route map with radiation heatmap overlay" class="absolute inset-0 w-full h-full object-contain zoomable">
+                    </div>
+                </div>
+                <p class="text-[10px] text-center font-mono mt-1" style="color:var(--text-muted)">← Swipe for more →</p>
+            </div>
+        </div>
+    </section>
+
     <!-- PROJECTS -->
     <section id="projects" class="py-24 relative z-10">
         <div class="container mx-auto px-4 md:px-8 max-w-7xl">
@@ -860,6 +1027,7 @@
                         <p class="text-sm flex-1 mb-4" style="color:var(--text-muted)">
                             Real-time radiation monitoring system using ESP32 & Geiger-Müller counters. AI-powered predictive analytics and smart evacuation routing. Multiple national & international awards.
                         </p>
+                        <a href="#radsafe" class="inline-flex items-center gap-1 text-xs font-mono mb-4 text-primary hover:underline">View full breakdown <i class="fas fa-arrow-right text-[10px]"></i></a>
                         <div class="flex flex-wrap gap-2">
                             <span class="badge text-primary" style="border-color:rgba(56,189,248,0.2);background:rgba(56,189,248,0.05)">ESP32</span>
                             <span class="badge text-primary" style="border-color:rgba(56,189,248,0.2);background:rgba(56,189,248,0.05)">Python</span>
@@ -913,6 +1081,7 @@
                         <p class="text-sm flex-1 mb-4" style="color:var(--text-muted)">
                             Experimental helical heat exchanger model with controlled heater as dummy fuel. IoT-based Digital Twin validated against theoretical, experimental, and Ansys simulation. Virtual sensors reconstruct readings for failed sensors via ML.
                         </p>
+                        <a href="#digitaltwin" class="inline-flex items-center gap-1 text-xs font-mono mb-3 text-primary hover:underline">View full breakdown <i class="fas fa-arrow-right text-[10px]"></i></a>
                         <p class="text-[10px] text-center font-mono mb-3" style="color:var(--text-muted)">← Swipe: Full Model · Experimental Model · Sensor Performance →</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="badge text-primary" style="border-color:rgba(56,189,248,0.2);background:rgba(56,189,248,0.05)">IoT</span>
