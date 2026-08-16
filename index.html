@@ -967,14 +967,17 @@
             <div class="glass p-6 rounded-2xl border-l-4 border-primary card-hover reveal mb-6">
                 <h4 class="text-lg font-display font-bold mb-2" style="color:var(--text)">Spatial Distribution of Radiation Measurements — MIST & INST</h4>
                 <p class="text-sm mb-4" style="color:var(--text-muted)">
-                    Side-by-side spatial scatter plots of collected radiation readings across two survey sites (MIST and the Institute of Nuclear Science & Technology), color-mapped by dose rate (μSv/h) to reveal hotspot clustering used for downstream geospatial interpolation and anomaly detection models.
+                    Side-by-side spatial scatter plots of collected radiation readings across two survey sites (MIST and the Institute of Nuclear Science & Technology), color-mapped by dose rate (μSv/h) to reveal hotspot clustering used for downstream geospatial interpolation and anomaly detection models. A continuous contour interpolation over the MIST survey area further resolves the discrete readings into a smooth radiation field, sharpening the hotspot near the reactor building.
                 </p>
                 <div class="thesis-gallery flex overflow-x-auto snap-x snap-mandatory gap-2 pb-2 h-72 no-scrollbar">
                     <div class="snap-center shrink-0 w-full h-full rounded-xl overflow-hidden border border-slate-700 relative bg-white">
                         <img src="spatial_distribution_mist_inst.png" alt="Spatial distribution of radiation measurements at MIST and INST" class="absolute inset-0 w-full h-full object-contain zoomable">
                     </div>
+                    <div class="snap-center shrink-0 w-full h-full rounded-xl overflow-hidden border border-slate-700 relative bg-white">
+                        <img src="radiation_contour_map.png" alt="Interpolated radiation level contour map of MIST campus" class="absolute inset-0 w-full h-full object-contain zoomable">
+                    </div>
                 </div>
-                <p class="text-[10px] text-center font-mono mt-1" style="color:var(--text-muted)">← Swipe for more →</p>
+                <p class="text-[10px] text-center font-mono mt-1" style="color:var(--text-muted)">← Swipe: Scatter Distribution · Contour Interpolation →</p>
             </div>
 
             <!-- Emergency Evacuation Routing -->
